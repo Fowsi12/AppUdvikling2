@@ -1,0 +1,47 @@
+@page "/mydices"
+@using BlazorApp1.Logic
+
+<h1>My Dices</h1>
+
+<p>Vælg antal terninger:</p>
+
+<select @bind="numberOfDice">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+
+<button class="btn btn-primary" @onclick="RollDice">
+    Kast terninger
+</button>
+
+<hr />
+
+<div>
+    @foreach (Die die in cup.Dice)
+    {
+        <img src="@GetDiceImage(die.Value)"
+             alt="Terning med @die.Value øjne"
+             width="100" />
+    }
+</div>
+
+@code {
+    private int numberOfDice = 2;
+
+    private DieCup cup = new DieCup();
+
+    private void RollDice()
+    {
+        cup.SetNumberOfDice(numberOfDice);
+        cup.Roll();
+    }
+
+    private string GetDiceImage(int value)
+    {
+        return $"images/dice/dice{value}.png";
+    }
+}

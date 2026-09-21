@@ -1,0 +1,52 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+@if (currentCount > 0)
+{
+    <p style="color: @GetNumberColor()">
+        Tilfældigt tal: @randomNumber
+    </p>
+}
+
+@if (randomNumber == birthdayDay)
+{
+    <p style="color: red;">
+        Du ramte min fødselsdag!
+    </p>
+}
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-secondary" @onclick="ResetCount">Reset</button>
+
+@code {
+    private int currentCount = 0;
+    private int randomNumber = 0;
+    private int birthdayDay = 4;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        randomNumber = Random.Shared.Next(1, currentCount + 1);
+    }
+
+    private string GetNumberColor()
+    {
+        if (randomNumber == birthdayDay)
+        {
+            return "red";
+        }
+
+        return "black";
+    }
+
+    private void ResetCount()
+    {
+        currentCount = 0;
+        randomNumber = 0;
+    }
+}
