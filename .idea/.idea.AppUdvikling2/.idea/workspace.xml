@@ -14,7 +14,58 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="480e720a-3737-4ae3-8795-3abf43d06f79" name="Changes" comment="Changes" />
+    <list default="true" id="480e720a-3737-4ae3-8795-3abf43d06f79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Logic/Item.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Logic/Shop.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Pages/Counter.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Pages/ShopPage.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Pages/ShopPage.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp1/Pages/Weather.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AppUdvikling2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AppUdvikling2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Layout/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Layout/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Layout/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Pages/Counter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Pages/Counter.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Pages/Weather.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Pages/Weather.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/BlazorApp1.wliyhp4vqy.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/BlazorApp1.wliyhp4vqy.pdb.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/BlazorApp1.zxbivku3h0.wasm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/BlazorApp1.zxbivku3h0.wasm.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/dotnet.9y4fkq8k6v.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/wwwroot/_framework/dotnet.9y4fkq8k6v.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/1wemzayru4-{0}-n4ykscss1e-n4ykscss1e.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/e76fe7a2nx-{0}-ji2h4nwg6f-ji2h4nwg6f.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/fe95vulehx-{0}-ji2h4nwg6f-ji2h4nwg6f.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/kyjy2iuvp1-{0}-wliyhp4vqy-wliyhp4vqy.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/mpnezo3ggr-{0}-zxbivku3h0-zxbivku3h0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/compressed/tsdf2s09qm-{0}-9y4fkq8k6v-9y4fkq8k6v.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/dotnet.js" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/dotnet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rbcswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rbcswa.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/ref/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/ref/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/refint/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/refint/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rpswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rpswa.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/Layout/NavMenu.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/Layout/NavMenu.razor.rz.scp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/bundle/BlazorApp1.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/bundle/BlazorApp1.styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/projectbundle/BlazorApp1.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/scopedcss/projectbundle/BlazorApp1.bundle.scp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets/htmlassetplaceholders/build/62f1zgrftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets/htmlassetplaceholders/build/62f1zgrftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/webcil/BlazorApp1.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/webcil/BlazorApp1.wasm" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +84,9 @@
     <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Fowsi12/AppUdvikling2.git&quot;,
@@ -45,10 +96,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/BlazorApp1/Logic/Die.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorApp1/Logic/Diecup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/Kontakt.razor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorApp1/Logic/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorApp1/Logic/Shop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/MyDices.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/kontakt.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/kontakt.razor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/ShopPage.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorApp1/Pages/ShopPage.razor.css.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -59,59 +111,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000000000000068" />
-      <entry key="S5" value="1.0000054082760372" />
-      <entry key="S10" value="1.0023282160589586" />
-      <entry key="S30" value="1.1944515094731047" />
-      <entry key="S60" value="2.1462316541132664" />
-      <entry key="M2" value="4.395322352372057" />
-      <entry key="M5" value="7.819947479521916" />
-      <entry key="M10" value="9.855207099765568" />
-      <entry key="M15" value="11.291726131031519" />
-      <entry key="M30" value="15.394893699303903" />
-      <entry key="H1" value="20.752516018911304" />
-      <entry key="H2" value="25.325439920449863" />
-      <entry key="H4" value="28.34564842523408" />
-      <entry key="D1" value="31.341348686734534" />
-      <entry key="W1" value="31.90461261880019" />
+      <entry key="S2" value="1.0000028079817804" />
+      <entry key="S5" value="1.0138167897622694" />
+      <entry key="S10" value="1.2411764833681502" />
+      <entry key="S30" value="2.9112776988169644" />
+      <entry key="S60" value="5.086164442448051" />
+      <entry key="M2" value="8.908453486943301" />
+      <entry key="M5" value="15.821794532124999" />
+      <entry key="M10" value="20.486100040822258" />
+      <entry key="M15" value="23.038964877198463" />
+      <entry key="M30" value="28.36704164668242" />
+      <entry key="H1" value="34.4937424628206" />
+      <entry key="H2" value="39.59286442567748" />
+      <entry key="H4" value="42.945355917604445" />
+      <entry key="D1" value="46.269012432909825" />
+      <entry key="W1" value="46.894127855867154" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="6.815785398334694E-252" />
-      <entry key="S10" value="2.610705919542585E-126" />
-      <entry key="S30" value="1.3769536384679211E-42" />
-      <entry key="S60" value="1.1734366785080147E-21" />
-      <entry key="M2" value="3.425546202444238E-11" />
-      <entry key="M5" value="6.514662654775433E-5" />
-      <entry key="M10" value="0.008071346018338848" />
-      <entry key="M15" value="0.0402374679651157" />
-      <entry key="M30" value="0.20059279140865388" />
-      <entry key="H1" value="0.4478758660707828" />
-      <entry key="H2" value="0.6692352845380933" />
-      <entry key="H4" value="0.8180680195057701" />
-      <entry key="D1" value="0.9670855685819282" />
-      <entry key="W1" value="0.9952302261397145" />
+      <entry key="S5" value="2.8941609298049464E-265" />
+      <entry key="S10" value="5.379740634830778E-133" />
+      <entry key="S30" value="8.133056313917993E-45" />
+      <entry key="S60" value="9.018345920354791E-23" />
+      <entry key="M2" value="9.496497207052077E-12" />
+      <entry key="M5" value="3.899647735501366E-5" />
+      <entry key="M10" value="0.006244715954710326" />
+      <entry key="M15" value="0.03391109337085299" />
+      <entry key="M30" value="0.18414964939106726" />
+      <entry key="H1" value="0.42912661230814775" />
+      <entry key="H2" value="0.6550775620551718" />
+      <entry key="H4" value="0.809368619391172" />
+      <entry key="D1" value="0.9653639135448304" />
+      <entry key="W1" value="0.9949769243006914" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193252643" />
-      <entry key="MS500" value="0.9917167307382933" />
-      <entry key="S2" value="0.9979227189991184" />
-      <entry key="S5" value="0.999173970746134" />
-      <entry key="S10" value="1.0019109596346132" />
-      <entry key="S30" value="1.1942526697913596" />
-      <entry key="S60" value="2.14592071704065" />
-      <entry key="M2" value="4.394895319156811" />
-      <entry key="M5" value="7.819670098738372" />
-      <entry key="M10" value="9.862841371740988" />
-      <entry key="M15" value="11.331007336035789" />
-      <entry key="M30" value="15.593228807960337" />
-      <entry key="H1" value="21.197814364662744" />
-      <entry key="H2" value="25.99271817703075" />
-      <entry key="H4" value="29.16250969407031" />
-      <entry key="D1" value="32.308194660948566" />
-      <entry key="W1" value="32.89980757377744" />
+      <entry key="MS100" value="0.14161048566197482" />
+      <entry key="MS500" value="0.6764241155251373" />
+      <entry key="S2" value="0.9068931126245587" />
+      <entry key="S5" value="0.9754284367322557" />
+      <entry key="S10" value="1.2213225568428796" />
+      <entry key="S30" value="2.9025828049676874" />
+      <entry key="S60" value="5.080332990235591" />
+      <entry key="M2" value="8.904594879116393" />
+      <entry key="M5" value="15.819779801717646" />
+      <entry key="M10" value="20.491001598733494" />
+      <entry key="M15" value="23.071379978005044" />
+      <entry key="M30" value="28.548762996164914" />
+      <entry key="H1" value="34.920218831587206" />
+      <entry key="H2" value="40.24593533711158" />
+      <entry key="H4" value="43.75348492731846" />
+      <entry key="D1" value="47.23412953819568" />
+      <entry key="W1" value="47.88906842587446" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -119,43 +171,46 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3JRuyX2XCjGgbw3IIdUSEj3VrGu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.BlazorApp1: https.executor": "Run",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "git.auto.fetch.suggestion.counter": "1",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.BlazorApp1: https.executor&quot;: &quot;Run&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BlazorApp1: https">
     <configuration name="BlazorApp1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
@@ -219,7 +274,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="new change" />
-    <option name="LAST_COMMIT_MESSAGE" value="new change" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,0 +1,130 @@
+.shop-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.shop-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.shop-header p {
+    color: #6c757d;
+    margin: 0;
+}
+
+.capital-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 15px;
+    padding: 18px 25px;
+    display: flex;
+    flex-direction: column;
+    min-width: 270px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.capital-card span {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.capital-card strong {
+    font-size: 1.5rem;
+    margin-top: 4px;
+}
+
+.shop-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.shop-button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.shop-button:hover {
+    transform: translateY(-2px);
+}
+
+.shop-button.primary {
+    background: #0d6efd;
+    color: white;
+}
+
+.shop-button.secondary {
+    background: #e9ecef;
+    color: #212529;
+}
+
+.shop-table-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.shop-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shop-table th {
+    background: #f8f9fa;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.shop-table td {
+    padding: 18px;
+    border-top: 1px solid #eeeeee;
+}
+
+.shop-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.item-name {
+    font-weight: 600;
+}
+
+.color-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+.stock {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.in-stock {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.out-of-stock {
+    background: #f8d7da;
+    color: #842029;
+}

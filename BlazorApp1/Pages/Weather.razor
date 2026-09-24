@@ -2,51 +2,114 @@
 
 <PageTitle>Weather</PageTitle>
 
-<h1>Weather</h1>
+<div class="weather-page">
 
-<p>Tilfældige vejrudsigterr</p>
+    <div class="weather-header">
+        <div>
+            <h1>Weather</h1>
+            <p>Tilfældige vejrudsigter fra forskellige danske byer.</p>
+        </div>
 
-<button class="btn btn-primary" @onclick="ShowAll">Alle</button>
-<button class="btn btn-primary" @onclick="ShowCold">Kolde</button>
-<button class="btn btn-primary" @onclick="ShowWarm">Varme</button>
+        <div class="weather-header-icon">
+            ☁
+        </div>
+    </div>
 
-<br />
-<br />
+    <div class="weather-toolbar">
 
-<button class="btn btn-success" @onclick="ShowMore">
-    Op
-</button>
+        <div class="toolbar-section">
+            <span class="toolbar-title">Filtrer vejr</span>
 
-<button class="btn btn-danger"
-        @onclick="ShowLess"
-        disabled="@(numberToShow <= 5)">
-    Ned
-</button>
+            <div class="toolbar-buttons">
+                <button class="filter-button all" @onclick="ShowAll">
+                    Alle
+                </button>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Location</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
+                <button class="filter-button cold" @onclick="ShowCold">
+                    ❄ Kolde
+                </button>
 
-    <tbody>
-        @foreach (var forecast in GetForecasts())
-        {
-            <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.Location</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
-            </tr>
-        }
-    </tbody>
-</table>
+                <button class="filter-button warm" @onclick="ShowWarm">
+                    ☀ Varme
+                </button>
+            </div>
+        </div>
+
+        <div class="toolbar-section">
+            <span class="toolbar-title">Antal vejrudsigter</span>
+
+            <div class="toolbar-buttons">
+                <button class="amount-button more" @onclick="ShowMore">
+                    + Vis flere
+                </button>
+
+                <button class="amount-button less"
+                        @onclick="ShowLess"
+                        disabled="@(numberToShow <= 5)">
+                    − Vis færre
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="weather-table-card">
+
+        <table class="weather-table">
+            <thead>
+                <tr>
+                    <th>Dato</th>
+                    <th>By</th>
+                    <th>Temp. (C)</th>
+                    <th>Temp. (F)</th>
+                    <th>Vejr</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var forecast in GetForecasts())
+                {
+                    <tr>
+                        <td class="date-cell">
+                            @forecast.Date.ToShortDateString()
+                        </td>
+
+                        <td>
+                            <span class="location-badge">
+                                @forecast.Location
+                            </span>
+                        </td>
+
+                        <td>
+                            @if (forecast.TemperatureC <= 10)
+                            {
+                                <span class="temperature cold-temperature">
+                                    @(forecast.TemperatureC) °C
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="temperature warm-temperature">
+                                    @(forecast.TemperatureC) °C
+                                </span>
+                            }
+                        </td>
+
+                        <td>
+                            @(forecast.TemperatureF) °F
+                        </td>
+
+                        <td>
+                            @forecast.Summary
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
 
 @code {
     private List<WeatherForecast> forecasts = new();
@@ -76,15 +139,13 @@
             "Roskilde"
         };
 
-        forecasts = new();
-
         for (int i = 0; i < 20; i++)
         {
-            WeatherForecast wf = new WeatherForecast
+            WeatherForecast forecast = new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(i)),
 
-                TemperatureC = Random.Shared.Next(20) + 1,
+                TemperatureC = Random.Shared.Next(1, 21),
 
                 Summary = summaries[
                     Random.Shared.Next(summaries.Length)
@@ -95,7 +156,7 @@
                 ]
             };
 
-            forecasts.Add(wf);
+            forecasts.Add(forecast);
         }
     }
 
@@ -116,6 +177,21 @@
         return result.Take(numberToShow);
     }
 
+    private void ShowAll()
+    {
+        filter = "Alle";
+    }
+
+    private void ShowCold()
+    {
+        filter = "Kolde";
+    }
+
+    private void ShowWarm()
+    {
+        filter = "Varme";
+    }
+
     private void ShowMore()
     {
         if (numberToShow < forecasts.Count)
@@ -130,21 +206,6 @@
         {
             numberToShow -= 5;
         }
-    }
-
-    private void ShowAll()
-    {
-        filter = "Alle";
-    }
-
-    private void ShowCold()
-    {
-        filter = "Kolde";
-    }
-
-    private void ShowWarm()
-    {
-        filter = "Varme";
     }
 
     public class WeatherForecast

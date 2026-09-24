@@ -1,0 +1,107 @@
+@page "/shop"
+@using BlazorApp1.Logic
+
+<div class="shop-page">
+
+    <div class="shop-header">
+        <div>
+            <h1>Shop</h1>
+            <p>Oversigt over varer og lagerstatus</p>
+        </div>
+
+        <div class="capital-card">
+            <span>Kapital bundet i lageret</span>
+            <strong>@GetTotalStockValue().ToString("0.00") kr.</strong>
+        </div>
+    </div>
+
+    <div class="shop-actions">
+        <button class="shop-button primary" @onclick="ShowAll">
+            Vis alle
+        </button>
+
+        <button class="shop-button secondary" @onclick="ShowInStock">
+            Vis varer på lager
+        </button>
+    </div>
+
+    <div class="shop-table-card">
+        <table class="shop-table">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Pris</th>
+                    <th>Lager</th>
+                    <th>Farve</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (Item item in shownItems)
+                {
+                    <tr>
+                        <td class="item-name">@item.Name</td>
+
+                        <td>
+                            @item.Price.ToString("0.00") kr.
+                        </td>
+
+                        <td>
+                            @if (item.Stock > 0)
+                            {
+                                <span class="stock in-stock">
+                                    @item.Stock på lager
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="stock out-of-stock">
+                                    Ikke på lager
+                                </span>
+                            }
+                        </td>
+
+                        <td>
+                            <div class="color-box"
+                                 style="background-color: @item.Color;">
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private Shop shop = new Shop();
+
+    private List<Item> shownItems = new();
+
+    protected override void OnInitialized()
+    {
+        shownItems = shop.GetItems();
+    }
+
+    private void ShowAll()
+    {
+        shownItems = shop.GetItems();
+    }
+
+    private void ShowInStock()
+    {
+        shownItems = shop.ItemsInStock();
+    }
+
+    private double GetTotalStockValue()
+    {
+        double total = 0;
+
+        foreach (Item item in shop.GetItems())
+        {
+            total += item.Price * item.Stock;
+        }
+
+        return total;
+    }
+}

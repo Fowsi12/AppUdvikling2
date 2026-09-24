@@ -1,0 +1,105 @@
+.counter-page {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.counter-header {
+    margin-bottom: 30px;
+}
+
+.counter-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.counter-header p {
+    color: #6c757d;
+    font-size: 1.05rem;
+}
+
+.counter-card {
+    max-width: 520px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eeeeee;
+}
+
+.counter-label {
+    display: block;
+    color: #8a8f98;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.counter-number {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 10px 0 30px;
+}
+
+.random-section {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.random-section span {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.random-number {
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.birthday-message {
+    padding: 12px;
+    border-radius: 10px;
+    background: #40ff00;
+    color: #000000;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.counter-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.count-button,
+.reset-button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-weight: 600;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.count-button {
+    background: #0d6efd;
+    color: white;
+}
+
+.reset-button {
+    background: #e9ecef;
+    color: #212529;
+}
+
+.count-button:hover,
+.reset-button:hover {
+    transform: translateY(-2px);
+}

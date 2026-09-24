@@ -2,26 +2,53 @@
 
 <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+<div class="counter-page">
 
-<p role="status">Current count: @currentCount</p>
+    <div class="counter-header">
+        <h1>Counter</h1>
+        <p>Tæl op og få et tilfældigt tal undervejs.</p>
+    </div>
 
-@if (currentCount > 0)
-{
-    <p style="color: @GetNumberColor()">
-        Tilfældigt tal: @randomNumber
-    </p>
-}
+    <div class="counter-card">
 
-@if (randomNumber == birthdayDay)
-{
-    <p style="color: red;">
-        Du ramte min fødselsdag!
-    </p>
-}
+        <span class="counter-label">CURRENT COUNT</span>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-secondary" @onclick="ResetCount">Reset</button>
+        <div class="counter-number">
+            @currentCount
+        </div>
+
+        @if (currentCount > 0)
+        {
+            <div class="random-section">
+                <span>Tilfældigt tal</span>
+
+                <div class="random-number"
+                     style="color: @GetNumberColor()">
+                    @randomNumber
+                </div>
+            </div>
+        }
+
+        @if (randomNumber == birthdayDay && currentCount > 0)
+        {
+            <div class="birthday-message">
+                Du ramte min fødselsdag!
+            </div>
+        }
+
+        <div class="counter-actions">
+            <button class="count-button" @onclick="IncrementCount">
+                + Tæl op
+            </button>
+
+            <button class="reset-button" @onclick="ResetCount">
+                ↻ Reset
+            </button>
+        </div>
+
+    </div>
+
+</div>
 
 @code {
     private int currentCount = 0;
