@@ -1,0 +1,19 @@
+<div>
+    Klokken er @currentTime.ToString("HH:mm:ss")
+</div>
+
+@code {
+    private DateTime currentTime = DateTime.Now;
+
+    protected override async Task OnInitializedAsync()
+    {
+        while (true)
+        {
+            currentTime = DateTime.Now;
+
+            StateHasChanged();
+
+            await Task.Delay(1000);
+        }
+    }
+}

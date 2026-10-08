@@ -1,0 +1,56 @@
+@using BlazorApp1.Logic
+
+<tr>
+    <td class="product-name">
+        @Product.Name
+    </td>
+
+    <td>
+        @Product.Price kr.
+    </td>
+
+    <td>
+        @Product.Stock
+    </td>
+
+    <td>
+        <span class="category-badge">
+            @Product.Category
+        </span>
+    </td>
+
+    <td>
+        @if (Product.IsPublished)
+        {
+            <span class="published-badge">
+                Published
+            </span>
+        }
+        else
+        {
+            <span class="draft-badge">
+                Draft
+            </span>
+        }
+    </td>
+    <td class="delete-cell">
+        <button class="delete-product-button"
+                title="Slet produkt"
+                @onclick="DeleteProduct">
+            🗑
+        </button>
+    </td>
+</tr>
+
+@code {
+    [Parameter]
+    public Product Product { get; set; } = new();
+    
+    [Parameter]
+    public EventCallback<Product> OnDelete { get; set; }
+
+    private async Task DeleteProduct()
+    {
+        await OnDelete.InvokeAsync(Product);
+    }
+}

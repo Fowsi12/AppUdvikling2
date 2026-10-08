@@ -1,0 +1,190 @@
+@page "/todo"
+@using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@using System.Text.Json
+@inject IJSRuntime JS
+
+<PageTitle>Todo</PageTitle>
+
+<div class="todo-page">
+
+    <div class="todo-header">
+        <div>
+            <h1>Todo</h1>
+            <p>Hold styr på dine opgaver og få tingene gjort.</p>
+        </div>
+
+        <div class="todo-header-icon">
+            ✓
+        </div>
+    </div>
+
+    <div class="add-card">
+
+        <span class="section-label">NY OPGAVE</span>
+
+        <div class="add-todo">
+            <input @bind="newTitle"
+                   placeholder="Hvad skal du huske?" />
+
+            <button @onclick="AddTodo">
+                + Tilføj
+            </button>
+        </div>
+
+    </div>
+
+    <div class="todo-table-card">
+
+        <div class="table-heading">
+            <div>
+                <h2>Mine opgaver</h2>
+                <span>@todoItems.Count opgaver</span>
+            </div>
+        </div>
+
+        <table class="todo-table">
+
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Opgave</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (TodoItem item in todoItems)
+                {
+                    <tr>
+
+                        <td class="status-cell">
+                            <input class="todo-checkbox"
+                                   type="checkbox"
+                                   checked="@item.IsDone"
+                                   @onchange="async e => await ToggleTodo(item, e)" />
+                        </td>
+
+                        <td>
+                            <span class="todo-title @(item.IsDone ? "done" : "")">
+                                @item.Title
+                            </span>
+
+                            @if (item.IsDone)
+                            {
+                                <span class="completed-badge">
+                                    Færdig
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="pending-badge">
+                                    Aktiv
+                                </span>
+                            }
+                        </td>
+
+                        <td class="delete-cell">
+                            <button class="delete-button"
+                                    title="Slet opgave"
+                                    @onclick="() => DeleteTodo(item)">
+                                🗑
+                            </button>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+        @if (todoItems.Count == 0)
+        {
+            <div class="empty-state">
+                <div class="empty-icon">✓</div>
+                <h3>Ingen opgaver endnu</h3>
+                <p>Tilføj din første opgave ovenfor.</p>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+@code {
+    private List<TodoItem> todoItems = new();
+
+    private string newTitle = "";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedTodos =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "todoItems"
+                );
+
+            if (!string.IsNullOrEmpty(savedTodos))
+            {
+                List<TodoItem>? loadedItems =
+                    JsonSerializer.Deserialize<List<TodoItem>>(savedTodos);
+
+                if (loadedItems != null)
+                {
+                    todoItems = loadedItems;
+                }
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTitle))
+        {
+            TodoItem item = new TodoItem
+            {
+                Title = newTitle,
+                IsDone = false
+            };
+
+            todoItems.Add(item);
+
+            newTitle = "";
+
+            await SaveTodos();
+        }
+    }
+
+    private async Task SaveTodos()
+    {
+        string json =
+            JsonSerializer.Serialize(todoItems);
+
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "todoItems",
+            json
+        );
+    }
+    private async Task DeleteTodo(TodoItem item)
+    {
+        todoItems.Remove(item);
+
+        await SaveTodos();
+    }
+    private async Task ToggleTodo(TodoItem item, ChangeEventArgs e)
+    {
+        if (e.Value is bool isDone)
+        {
+            item.IsDone = isDone;
+        }
+
+        await SaveTodos();
+    }
+}

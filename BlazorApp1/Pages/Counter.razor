@@ -1,5 +1,5 @@
 ﻿@page "/counter"
-
+@inject IJSRuntime JS
 <PageTitle>Counter</PageTitle>
 
 <div class="counter-page">
@@ -55,10 +55,67 @@
     private int randomNumber = 0;
     private int birthdayDay = 4;
 
-    private void IncrementCount()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedCount =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "counterValue"
+                );
+
+            string? savedRandom =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "randomNumber"
+                );
+
+            if (int.TryParse(savedCount, out int count))
+            {
+                currentCount = count;
+            }
+
+            if (int.TryParse(savedRandom, out int random))
+            {
+                randomNumber = random;
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task IncrementCount()
     {
         currentCount++;
-        randomNumber = Random.Shared.Next(1, currentCount + 1);
+
+        randomNumber =
+            Random.Shared.Next(1, currentCount + 1);
+
+        await SaveToLocalStorage();
+    }
+
+    private async Task ResetCount()
+    {
+        currentCount = 0;
+        randomNumber = 0;
+
+        await SaveToLocalStorage();
+    }
+
+    private async Task SaveToLocalStorage()
+    {
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "counterValue",
+            currentCount
+        );
+
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "randomNumber",
+            randomNumber
+        );
     }
 
     private string GetNumberColor()
@@ -69,11 +126,5 @@
         }
 
         return "black";
-    }
-
-    private void ResetCount()
-    {
-        currentCount = 0;
-        randomNumber = 0;
     }
 }

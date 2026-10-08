@@ -1,0 +1,148 @@
+@page "/search"
+
+@inject HttpClient Http
+
+<h3>SearchPage</h3>
+
+<input @bind="searchText"
+       placeholder="Indtast et ord..." />
+
+<button @onclick="SearchStartsWith">
+    Starts With
+</button>
+
+<button @onclick="SearchContains">
+    Contains
+</button>
+
+<button @onclick="SearchDistanceOne">
+    Distance 1
+</button>
+
+@if (!string.IsNullOrEmpty(searchDescription) && viewedWords != null)
+{
+    <p>
+        Herunder er @viewedWords.Length ord som @searchDescription
+    </p>
+}
+
+@if (viewedWords != null)
+{
+    <ul>
+        @foreach (var w in viewedWords.Take(visibleCount))
+        {
+            <li>@w</li>
+        }
+    </ul>
+
+    @if (viewedWords.Length > visibleCount)
+    {
+        <button @onclick="ShowMore">
+            Flere...
+        </button>
+    }
+}
+else
+{
+    <p>waiting for words to be loaded...</p>
+}
+
+@code {
+    string[]? viewedWords;
+
+    string[] allWords = Array.Empty<string>();
+
+    string searchText = "";
+    
+    string searchDescription = "";
+    int visibleCount = 10;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allWords = await LoadAllWords();
+
+        viewedWords = allWords.Take(100).ToArray();
+    }
+
+    private async Task<string[]> LoadAllWords()
+    {
+        string content =
+            await Http.GetStringAsync("sample-data/words.txt");
+
+        await Task.Delay(3000);
+
+        return content.Split("\n");
+    }
+
+    private void SearchStartsWith()
+    {
+        visibleCount = 10;
+
+        viewedWords = allWords
+            .Where(word =>
+                word.StartsWith(
+                    searchText,
+                    StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        searchDescription =
+            $"starter med \"{searchText}\"";
+    }
+
+    private void SearchContains()
+    {
+        visibleCount = 10;
+
+        viewedWords = allWords
+            .Where(word =>
+                word.Contains(
+                    searchText,
+                    StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        searchDescription =
+            $"indeholder \"{searchText}\"";
+    }
+
+    private void SearchDistanceOne()
+    {
+        visibleCount = 10;
+
+        viewedWords = allWords
+            .Where(word => HasDistanceOne(word.Trim(), searchText))
+            .ToArray();
+
+        searchDescription =
+            $"har distance 1 til \"{searchText}\"";
+    }
+
+    private bool HasDistanceOne(string word, string search)
+    {
+        if (word.Length != search.Length)
+        {
+            return false;
+        }
+
+        int differences = 0;
+
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (char.ToLower(word[i]) !=
+                char.ToLower(search[i]))
+            {
+                differences++;
+            }
+
+            if (differences > 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    private void ShowMore()
+    {
+        visibleCount += 10;
+    }
+}

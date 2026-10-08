@@ -14,14 +14,13 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = false
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorApp1
 build_property.RootNamespace = BlazorApp1
 build_property.ProjectDir = C:\Users\fowsi\RiderProjects\AppUdvikling2\BlazorApp1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
-build_property.RazorLangVersion = 10.0
+build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\fowsi\RiderProjects\AppUdvikling2\BlazorApp1
@@ -33,12 +32,12 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/Diecup.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGllY3VwLnJhem9y
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Components/TimeComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUaW1lQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/Diecup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGllY3VwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/MyDices.razor]
@@ -49,9 +48,17 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/SearchPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Components/ProductComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-o40oqlrwbb
 
 [C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
@@ -65,9 +72,29 @@ build_metadata.AdditionalFiles.CssScope = b-da4la3n260
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-2h17c2zdwe
 
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-rnrr1pkvg1
+
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/ProductListPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdExpc3RQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-c4ac6z4bci
+
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/ProductPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-d9aufjsxrp
+
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/ShopColors.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcENvbG9ycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-v667476mim
+
 [C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/ShopPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4jedb8rdjo
+
+[C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/TodoPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kb1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zggj8x54rq
 
 [C:/Users/fowsi/RiderProjects/AppUdvikling2/BlazorApp1/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==

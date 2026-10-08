@@ -1,5 +1,7 @@
 @page "/mydices"
 @using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
 
 <h1>My Dices</h1>
 
@@ -34,10 +36,70 @@
 
     private DieCup cup = new DieCup();
 
-    private void RollDice()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedNumber =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "numberOfDice"
+                );
+
+            string? savedValues =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "diceValues"
+                );
+
+            if (int.TryParse(savedNumber, out int amount))
+            {
+                numberOfDice = amount;
+                cup.SetNumberOfDice(numberOfDice);
+            }
+
+            if (!string.IsNullOrEmpty(savedValues))
+            {
+                string[] values = savedValues.Split(',');
+
+                for (int i = 0; i < values.Length && i < cup.Dice.Count; i++)
+                {
+                    if (int.TryParse(values[i], out int value))
+                    {
+                        cup.Dice[i].SetValue(value);
+                    }
+                }
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task RollDice()
     {
         cup.SetNumberOfDice(numberOfDice);
+
         cup.Roll();
+
+        await SaveDice();
+    }
+
+    private async Task SaveDice()
+    {
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "numberOfDice",
+            numberOfDice
+        );
+
+        string values =
+            string.Join(",", cup.Dice.Select(die => die.Value));
+
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "diceValues",
+            values
+        );
     }
 
     private string GetDiceImage(int value)

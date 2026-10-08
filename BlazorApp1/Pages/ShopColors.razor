@@ -1,0 +1,116 @@
+@page "/shopcolors"
+@using BlazorApp1.Logic
+
+<h1>Filtrer varer efter farve</h1>
+
+<p>Vælg en eller flere farver:</p>
+<div>
+    <label>
+        <input type="checkbox" @bind="redSelected" />
+        Red
+    </label>
+
+    <label>
+        <input type="checkbox" @bind="blueSelected" />
+        Blue
+    </label>
+
+    <label>
+        <input type="checkbox" @bind="blackSelected" />
+        Black
+    </label>
+
+    <label>
+        <input type="checkbox" @bind="whiteSelected" />
+        White
+    </label>
+</div>
+
+<br />
+
+<button class="btn btn-primary" @onclick="FilterColors">
+    Vis valgte farver
+</button>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Navn</th>
+        <th>Pris</th>
+        <th>Lager</th>
+        <th>Farve</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (Item item in shownItems)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price.ToString("0.00") kr.</td>
+            <td>@item.Stock</td>
+            <td>
+                <div style="
+                        width: 30px;
+                        height: 30px;
+                        background-color: @item.Color;
+                        border: 1px solid black;">
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    private Shop shop = new Shop();
+
+    private List<Item> shownItems = new();
+
+    private bool redSelected;
+    private bool blueSelected;
+    private bool blackSelected;
+    private bool whiteSelected;
+
+    protected override void OnInitialized()
+    {
+        shownItems = shop.GetItems();
+    }
+    private void FilterColors()
+    {
+        List<string> selectedColors = new List<string>();
+
+        if (redSelected)
+        {
+            selectedColors.Add("Red");
+        }
+
+        if (blueSelected)
+        {
+            selectedColors.Add("Blue");
+        }
+
+        if (blackSelected)
+        {
+            selectedColors.Add("Black");
+        }
+
+        if (whiteSelected)
+        {
+            selectedColors.Add("White");
+        }
+
+        shownItems = new List<Item>();
+
+        foreach (Item item in shop.GetItems())
+        {
+            if (selectedColors.Contains(item.Color))
+            {
+                shownItems.Add(item);
+            }
+        }
+    }
+}

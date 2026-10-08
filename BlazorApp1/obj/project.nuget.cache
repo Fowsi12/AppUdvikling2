@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "CS3V92zHXaY=",
+  "dgSpecHash": "Coy/7WCl3EE=",
   "success": true,
   "projectFilePath": "C:\\Users\\fowsi\\RiderProjects\\AppUdvikling2\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.12\\microsoft.aspnetcore.app.internal.assets.10.0.12.nupkg.sha512",
+    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.1\\microsoft.aspnetcore.app.internal.assets.10.0.1.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.12\\microsoft.aspnetcore.authorization.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.12\\microsoft.aspnetcore.components.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\10.0.12\\microsoft.aspnetcore.components.analyzers.10.0.12.nupkg.sha512",
@@ -13,6 +13,7 @@
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.12\\microsoft.aspnetcore.components.webassembly.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\10.0.12\\microsoft.aspnetcore.components.webassembly.devserver.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.12\\microsoft.aspnetcore.metadata.10.0.12.nupkg.sha512",
+    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.101\\microsoft.dotnet.hotreload.webassembly.browser.10.0.101.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.12\\microsoft.extensions.configuration.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.12\\microsoft.extensions.configuration.abstractions.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.12\\microsoft.extensions.configuration.binder.10.0.12.nupkg.sha512",
@@ -33,8 +34,9 @@
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.extensions.validation\\10.0.12\\microsoft.extensions.validation.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.jsinterop\\10.0.12\\microsoft.jsinterop.10.0.12.nupkg.sha512",
     "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.12\\microsoft.jsinterop.webassembly.10.0.12.nupkg.sha512",
-    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.12\\microsoft.net.illink.tasks.10.0.12.nupkg.sha512",
-    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.12\\microsoft.net.sdk.webassembly.pack.10.0.12.nupkg.sha512"
+    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.1\\microsoft.net.illink.tasks.10.0.1.nupkg.sha512",
+    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.12\\microsoft.net.sdk.webassembly.pack.10.0.12.nupkg.sha512",
+    "C:\\Users\\fowsi\\.nuget\\packages\\microsoft.netcore.app.ref\\10.0.12\\microsoft.netcore.app.ref.10.0.12.nupkg.sha512"
   ],
   "logs": []
 }

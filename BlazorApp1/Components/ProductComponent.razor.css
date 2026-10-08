@@ -1,0 +1,77 @@
+td {
+    padding: 17px;
+    border-top: 1px solid #eeeeee;
+}
+
+tr:hover {
+    background: #fafafa;
+}
+
+.product-name {
+    font-weight: 650;
+}
+
+.category-badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background: #eeeeee;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.published-badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background: #d1e7dd;
+    color: #0f5132;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.draft-badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background: #fff3cd;
+    color: #664d03;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.delete-cell {
+    width: 70px;
+    text-align: center;
+}
+
+.delete-product-button {
+    border: none;
+    background: transparent;
+    border-radius: 9px;
+
+    padding: 7px 10px;
+
+    font-size: 1.15rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.delete-product-button:hover {
+    background: #f8d7da;
+    transform: scale(1.1);
+}

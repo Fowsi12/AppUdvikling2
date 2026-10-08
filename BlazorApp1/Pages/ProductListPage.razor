@@ -1,0 +1,143 @@
+@page "/productlist"
+@using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@using System.Text.Json
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@using BlazorApp1.Components
+
+<PageTitle>Produktliste</PageTitle>
+
+<div class="product-page">
+
+    <div class="product-header">
+
+        <div>
+            <span class="product-eyebrow">PRODUKTADMINISTRATION</span>
+            <h1>Produktliste</h1>
+            <p>Se og administrer dine oprettede produkter.</p>
+        </div>
+
+        <button class="add-product-button"
+                @onclick="AddProduct">
+            + Tilføj produkt
+        </button>
+
+    </div>
+
+    @if (products.Count > 0)
+    {
+        <div class="product-list-section">
+
+            <div class="list-header">
+
+                <div>
+                    <span class="product-eyebrow">PRODUKTLISTE</span>
+                    <h2>Oprettede produkter</h2>
+                </div>
+
+                <span class="product-count">
+                    @products.Count produkter
+                </span>
+
+            </div>
+
+            <div class="product-table-card">
+
+                <table class="product-table">
+
+                    <thead>
+                        <tr>
+                            <th>Navn</th>
+                            <th>Pris</th>
+                            <th>Stock</th>
+                            <th>Kategori</th>
+                            <th>Published</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    @foreach (Product product in products)
+                    {
+                        <ProductComponent Product="product"
+                                          OnDelete="ConfirmDelete" />
+                    }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <p>Der er endnu ikke oprettet nogen produkter.</p>
+    }
+
+</div>
+
+@code {
+
+    private List<Product> products = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedProducts =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "products"
+                );
+
+            if (!string.IsNullOrEmpty(savedProducts))
+            {
+                List<Product>? loadedProducts =
+                    JsonSerializer.Deserialize<List<Product>>(savedProducts);
+
+                if (loadedProducts != null)
+                {
+                    products = loadedProducts;
+                }
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private void AddProduct()
+    {
+        Navigation.NavigateTo("/product");
+    }
+
+    private async Task SaveProducts()
+    {
+        string json =
+            JsonSerializer.Serialize(products);
+
+        await JS.InvokeVoidAsync(
+            "localStorage.setItem",
+            "products",
+            json
+        );
+    }
+
+    private async Task ConfirmDelete(Product product)
+    {
+        bool confirmed = await JS.InvokeAsync<bool>(
+            "confirm",
+            $"Er du sikker på, at du vil slette {product.Name}?"
+        );
+
+        if (confirmed)
+        {
+            products.Remove(product);
+
+            await SaveProducts();
+        }
+    }
+}

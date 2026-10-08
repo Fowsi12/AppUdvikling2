@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "BlazorApp1",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-gPmIiLtABbJ/X3MR8uutL7zrBVV9cWE0kPX1mLArCFM=",
+    "hash": "sha256-Vjqh4Sj3T4rpjfUg+2OIzuOLFVbkdhhDPGiJxhQNcGo=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.b6l13xorvf.js"
@@ -92,6 +92,12 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Microsoft.AspNetCore.Metadata.wasm",
         "name": "Microsoft.AspNetCore.Metadata.q2trwnoavt.wasm",
         "hash": "sha256-DljoTp3NkZPHFzzL2slIirD4RBBgZS7RGV0fQexZbNU=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.DotNet.HotReload.WebAssembly.Browser.wasm",
+        "name": "Microsoft.DotNet.HotReload.WebAssembly.Browser.mboztfuody.wasm",
+        "hash": "sha256-4h6PnLdgeWYG1/NUCACgpWvb2CVzuIToHpz/KguhvGg=",
         "cache": "force-cache"
       },
       {
@@ -1235,34 +1241,28 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "cache": "force-cache"
       },
       {
-        "virtualPath": "Microsoft.DotNet.HotReload.WebAssembly.Browser.wasm",
-        "name": "Microsoft.DotNet.HotReload.WebAssembly.Browser.mboztfuody.wasm",
-        "hash": "sha256-4h6PnLdgeWYG1/NUCACgpWvb2CVzuIToHpz/KguhvGg=",
-        "cache": "force-cache"
-      },
-      {
         "virtualPath": "BlazorApp1.wasm",
-        "name": "BlazorApp1.kps3el71bt.wasm",
-        "hash": "sha256-6FkQCuV1MGW9dgzpAvE0YD/jrVJeOYjqAeoBBTGlos4=",
+        "name": "BlazorApp1.2fwkw41yuo.wasm",
+        "hash": "sha256-HiEf5drzuV49xd6727aiRsdr1Rquqy/cWOJS8mttWwE=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "BlazorApp1.pdb",
-        "name": "BlazorApp1.pw8wuorw5y.pdb",
-        "hash": "sha256-GeMS9hcsUuJ/0DEbCyh5IkUeTy4bsBSPdlypBercQfo=",
+        "name": "BlazorApp1.57vn7cccsx.pdb",
+        "hash": "sha256-TysMj07DSm+tA2TSaQhMtu55cztOR+DkUOZIEu2iqYs=",
         "cache": "force-cache"
       }
     ],
     "libraryInitializers": [
       {
-        "name": "_framework/Microsoft.DotNet.HotReload.WebAssembly.Browser.0ql05aqe1d.lib.module.js"
+        "name": "_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.99zm1jdh75.lib.module.js"
       }
     ],
     "modulesAfterConfigLoaded": [
       {
-        "name": "../_framework/Microsoft.DotNet.HotReload.WebAssembly.Browser.0ql05aqe1d.lib.module.js"
+        "name": "../_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.99zm1jdh75.lib.module.js"
       }
     ]
   },

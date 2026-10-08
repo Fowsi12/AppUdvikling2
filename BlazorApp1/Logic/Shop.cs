@@ -11,23 +11,23 @@ public class Shop
         Item item1 = new Item()
         {
             Name = "Bukser",
-            Price = 199.95,
-            Stock = 5,
-            Color = "Red"
-        };
-
-        Item item2 = new Item()
-        {
-            Name = "Jakke",
-            Price = 329.99,
+            Price = 199,
             Stock = 10,
             Color = "Blue"
         };
 
+        Item item2 = new Item()
+        {
+            Name = "Bukser",
+            Price = 199,
+            Stock = 10,
+            Color = "Blue"
+        };
+        
         Item item3 = new Item()
         {
             Name = "Hat",
-            Price = 19.99,
+            Price = 129,
             Stock = 0,
             Color = "Black"
         };
@@ -35,7 +35,7 @@ public class Shop
         Item item4 = new Item()
         {
             Name = "T-Shirt",
-            Price = 29.99,
+            Price = 229,
             Stock = 8,
             Color = "White"
         };
@@ -43,7 +43,7 @@ public class Shop
         Item item5 = new Item()
         {
             Name = "Sko",
-            Price = 229.99,
+            Price = 229,
             Stock = 2,
             Color = "Blue"
         };
