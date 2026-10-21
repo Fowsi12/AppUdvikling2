@@ -18,10 +18,13 @@
             <p>Se og administrer dine oprettede produkter.</p>
         </div>
 
-        <button class="add-product-button"
-                @onclick="AddProduct">
-            + Tilføj produkt
-        </button>
+        @if (loggedInUser?.Role == "admin")
+        {
+            <button class="add-product-button"
+                    @onclick="AddProduct">
+                + Tilføj produkt
+            </button>
+        }
 
     </div>
 
@@ -62,6 +65,7 @@
                     @foreach (Product product in products)
                     {
                         <ProductComponent Product="product"
+                                          IsAdmin="@(loggedInUser?.Role == "admin")"
                                           OnDelete="ConfirmDelete" />
                     }
 
@@ -82,12 +86,32 @@
 
 @code {
 
+    private User? loggedInUser;
+    
     private List<Product> products = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+            // Hent den bruger der er logget ind
+            string? savedUser =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "loggedInUser"
+                );
+
+            // Hvis ingen bruger er logget ind
+            if (string.IsNullOrEmpty(savedUser))
+            {
+                Navigation.NavigateTo("/login", true);
+                return;
+            }
+
+            loggedInUser =
+                JsonSerializer.Deserialize<User>(savedUser);
+
+            // Hent produkterne
             string? savedProducts =
                 await JS.InvokeAsync<string?>(
                     "localStorage.getItem",
@@ -105,10 +129,17 @@
                 }
             }
 
+            // Almindelige brugere må kun se publicerede produkter
+            if (loggedInUser?.Role != "admin")
+            {
+                products = products
+                    .Where(product => product.IsPublished)
+                    .ToList();
+            }
+
             StateHasChanged();
         }
     }
-
     private void AddProduct()
     {
         Navigation.NavigateTo("/product");

@@ -1,5 +1,11 @@
 ﻿@page "/"
 
+@using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@using System.Text.Json
+
+@inject IJSRuntime JS
+
 <PageTitle>Home</PageTitle>
 
 <div class="home-page">
@@ -7,6 +13,7 @@
     <section class="hero">
 
         <div class="hero-content">
+
             <span class="eyebrow">MIN BLAZOR LEGEPLADS</span>
 
             <h1>
@@ -16,81 +23,143 @@
 
             <p>
                 Her bygger jeg små firmaer, spil, værktøjer,
-                eksperimenter og opgaver i Blazor og C#.
+                søgefunktioner og webapps med Blazor og C#.
             </p>
 
+            @if (loggedInUser != null)
+            {
+                <div class="welcome-user">
+                    <div class="welcome-avatar">
+                        @loggedInUser.Username.Substring(0, 1).ToUpper()
+                    </div>
+
+                    <div>
+                        <span>Logget ind som</span>
+                        <strong>
+                            @loggedInUser.Username · @loggedInUser.Role
+                        </strong>
+                    </div>
+                </div>
+            }
+
             <div class="hero-actions">
-                <a class="primary-action" href="/shop">
-                    Se mine projekter
+
+                <a class="primary-action" href="#projects">
+                    Udforsk projekter
                 </a>
 
-                <a class="secondary-action" href="/todo">
-                    Åbn Todo
-                </a>
+                @if (loggedInUser != null)
+                {
+                    <a class="secondary-action" href="/productlist">
+                        Åbn produktliste
+                    </a>
+                }
+                else
+                {
+                    <a class="secondary-action" href="/login">
+                        Log ind
+                    </a>
+                }
+
             </div>
+
         </div>
 
         <div class="hero-visual">
 
-            <div class="floating-card card-one">
+            <div class="floating-card">
                 <div class="card-icon">🎲</div>
-                <strong>Spil</strong>
-                <span>Terninger og små lege</span>
+                <strong>Spil & leg</strong>
+                <span>Terninger, counter og små eksperimenter</span>
             </div>
 
-            <div class="floating-card card-two">
-                <div class="card-icon">🛍</div>
-                <strong>Mini-firmaer</strong>
-                <span>Shop og lagerstyring</span>
+            <div class="floating-card">
+                <div class="card-icon">📦</div>
+                <strong>Mini-systemer</strong>
+                <span>Shop, produkter og lagerstyring</span>
             </div>
 
-            <div class="floating-card card-three">
-                <div class="card-icon">☁</div>
-                <strong>Eksperimenter</strong>
-                <span>Weather og data</span>
+            <div class="floating-card">
+                <div class="card-icon">🔐</div>
+                <strong>Webfunktioner</strong>
+                <span>Login, roller, localStorage og søgning</span>
             </div>
 
         </div>
 
     </section>
 
-    <section class="projects-section">
+
+    <section class="tech-strip">
+
+        <div>
+            <strong>Blazor</strong>
+            <span>Interaktive Razor-sider</span>
+        </div>
+
+        <div>
+            <strong>C#</strong>
+            <span>Logik og modeller</span>
+        </div>
+
+        <div>
+            <strong>localStorage</strong>
+            <span>Data der huskes</span>
+        </div>
+
+        <div>
+            <strong>Login & roller</strong>
+            <span>User og admin</span>
+        </div>
+
+    </section>
+
+
+    <section class="projects-section" id="projects">
 
         <div class="section-heading">
+
             <div>
                 <span class="eyebrow">UDFORSK</span>
-                <h2>Mine små projekter</h2>
+                <h2>Mine projekter</h2>
             </div>
 
             <p>
                 Hver side er et lille eksperiment med Blazor,
-                C#, logik og design.
+                C#, brugerflader, data og logik.
             </p>
+
         </div>
+
 
         <div class="project-grid">
 
             <a class="project-card" href="/counter">
+
                 <div class="project-icon blue">⏱</div>
 
                 <div>
                     <h3>Counter</h3>
+
                     <p>
-                        En interaktiv counter med random tal,
-                        fødselsdag og localStorage.
+                        Counter, tilfældige tal, fødselsdagslogik
+                        og lagring i localStorage.
                     </p>
                 </div>
 
                 <span class="project-arrow">→</span>
             </a>
 
+
             <a class="project-card" href="/weather">
+
                 <div class="project-icon sky">☁</div>
 
                 <div>
                     <h3>Weather</h3>
+
                     <p>
-                        Tilfældige vejrudsigter, byer,
+                        Tilfældige vejrudsigter, danske byer,
                         temperaturer og filtrering.
                     </p>
                 </div>
@@ -98,78 +167,164 @@
                 <span class="project-arrow">→</span>
             </a>
 
+
             <a class="project-card" href="/mydices">
+
                 <div class="project-icon purple">🎲</div>
 
                 <div>
                     <h3>MyDices</h3>
+
                     <p>
-                        Kast terninger, vælg antal og
-                        gem resultatet i browseren.
+                        Vælg antal terninger, kast dem og
+                        gem både antal og øjne i browseren.
                     </p>
                 </div>
 
                 <span class="project-arrow">→</span>
             </a>
 
+
             <a class="project-card" href="/shop">
+
                 <div class="project-icon green">🛍</div>
 
                 <div>
                     <h3>Shop</h3>
+
                     <p>
                         Et lille firma med varer,
-                        lagerstatus og kapital.
+                        lagerstatus og kapitalberegning.
                     </p>
                 </div>
 
                 <span class="project-arrow">→</span>
             </a>
 
+
             <a class="project-card" href="/shopcolors">
+
                 <div class="project-icon orange">🎨</div>
 
                 <div>
                     <h3>Farvefilter</h3>
+
                     <p>
-                        Filtrer shop-varerne efter
-                        flere farver på samme tid.
+                        Filtrer varer efter flere
+                        farver på samme tid.
                     </p>
                 </div>
 
                 <span class="project-arrow">→</span>
             </a>
 
+
             <a class="project-card" href="/todo">
+
                 <div class="project-icon red">✓</div>
 
                 <div>
                     <h3>Todo</h3>
+
                     <p>
-                        Hold styr på opgaver med status,
-                        sletning og localStorage.
+                        Opgaveliste med status, sletning,
+                        sortering og localStorage.
                     </p>
                 </div>
 
                 <span class="project-arrow">→</span>
             </a>
+
+
+            <a class="project-card" href="/productlist">
+
+                <div class="project-icon product">📦</div>
+
+                <div>
+                    <h3>Produkter</h3>
+
+                    <p>
+                        Produktadministration med validering,
+                        kategorier, lager og publicering.
+                    </p>
+                </div>
+
+                <span class="project-arrow">→</span>
+            </a>
+
+
+            <a class="project-card" href="/search">
+
+                <div class="project-icon search">🔎</div>
+
+                <div>
+                    <h3>Ordsøgning</h3>
+
+                    <p>
+                        Søg blandt tusindvis af ord med
+                        Starts With, Contains og Distance 1.
+                    </p>
+                </div>
+
+                <span class="project-arrow">→</span>
+            </a>
+
+
+            @if (loggedInUser == null)
+            {
+                <a class="project-card login-project" href="/login">
+
+                    <div class="project-icon login">🔐</div>
+
+                    <div>
+                        <h3>Login</h3>
+
+                        <p>
+                            Log ind som almindelig bruger eller
+                            administrator og få forskellig adgang.
+                        </p>
+                    </div>
+
+                    <span class="project-arrow">→</span>
+                </a>
+            }
+            else if (loggedInUser.Role == "admin")
+            {
+                <a class="project-card login-project" href="/product">
+
+                    <div class="project-icon login">⚙</div>
+
+                    <div>
+                        <h3>Adminområde</h3>
+
+                        <p>
+                            Du er logget ind som admin og kan
+                            oprette og administrere produkter.
+                        </p>
+                    </div>
+
+                    <span class="project-arrow">→</span>
+                </a>
+            }
 
         </div>
 
     </section>
 
+
     <section class="bottom-banner">
 
         <div>
-            <span class="eyebrow light">UNDER UDVIKLING</span>
+            <span class="eyebrow light">PROJEKTET VOKSER</span>
 
             <h2>
-                Der kommer hele tiden nye små idéer til.
+                Fra små øvelser til en rigtig lille webapp.
             </h2>
 
             <p>
-                Nogle er seriøse. Nogle er spil.
-                Nogle er bare lavet for at se, om jeg kan.
+                Projektet startede med simple Blazor-opgaver,
+                men indeholder nu komponenter, localStorage,
+                produktstyring, søgning, login og roller.
             </p>
         </div>
 
@@ -180,3 +335,29 @@
     </section>
 
 </div>
+
+
+@code {
+
+    private User? loggedInUser;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedUser =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "loggedInUser"
+                );
+
+            if (!string.IsNullOrEmpty(savedUser))
+            {
+                loggedInUser =
+                    JsonSerializer.Deserialize<User>(savedUser);
+            }
+
+            StateHasChanged();
+        }
+    }
+}

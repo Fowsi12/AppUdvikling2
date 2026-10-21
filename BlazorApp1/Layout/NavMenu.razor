@@ -1,78 +1,223 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorApp1</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿@using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@using System.Text.Json
+
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+
+<div class="nav-shell">
+
+    <div class="top-row ps-3 navbar navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">BlazorApp1</a>
+
+            <button title="Navigation menu"
+                    class="navbar-toggler"
+                    @onclick="ToggleNavMenu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </div>
+
+
+    <!-- KUN MENUPUNKTERNE SCROLLER -->
+    <div class="@NavMenuCssClass nav-scrollable"
+         @onclick="ToggleNavMenu">
+
+        <nav class="nav flex-column">
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link"
+                         href=""
+                         Match="NavLinkMatch.All">
+
+                    <span class="bi bi-house-door-fill-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Home
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+
+                    <span class="bi bi-timer-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Counter
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="weather">
+
+                    <span class="bi bi-weather-wind-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Weather
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="Diecup">
+
+                    <span class="bi bi-dice-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Diecup
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="mydices">
+
+                    <span class="bi bi-dice-cup-nav-menu"
+                          aria-hidden="true"></span>
+
+                    MyDices
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="shop">
+
+                    <span class="bi bi-shop-bag-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Shop
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="shopcolors">
+
+                    <span class="bi bi-palette-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Farvefilter
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="todo">
+
+                    <span class="bi bi-todo-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Todo
+                </NavLink>
+            </div>
+
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="product">
+
+                    <span class="bi bi-product-nav-menu"
+                          aria-hidden="true"></span>
+
+                    Produkter
+                </NavLink>
+            </div>
+
+        </nav>
+
+    </div>
+
+
+    <!-- DENNE DEL BLIVER ALTID NEDE -->
+    <div class="nav-footer">
+
+        @if (loggedInUser != null)
+        {
+            <div class="login-status">
+
+                <div class="user-avatar">
+                    @loggedInUser.Username.Substring(0, 1).ToUpper()
+                </div>
+
+                <div class="user-info">
+                    <strong>@loggedInUser.Username</strong>
+                    <span>@loggedInUser.Role</span>
+                </div>
+
+            </div>
+
+            <button class="logout-button"
+                    @onclick="Logout">
+
+                <span class="bi bi-logout-nav-menu"
+                      aria-hidden="true"></span>
+
+                Log ud
+            </button>
+        }
+        else
+        {
+            <NavLink class="login-nav-button"
+                     href="login">
+
+                <span class="bi bi-login-nav-menu"
+                      aria-hidden="true"></span>
+
+                Log ind
+            </NavLink>
+        }
+
+    </div>
+
 </div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-timer-nav-menu" aria-hidden="true"></span>
-                Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-weather-wind-nav-menu" aria-hidden="true"></span>
-                Weather
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Diecup">
-                <span class="bi bi-dice-nav-menu" aria-hidden="true"></span> 
-                Diecup
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="mydices">
-                <span class="bi bi-dice-cup-nav-menu" aria-hidden="true"></span>
-                MyDices
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="shop">
-                <span class="bi bi-shop-bag-nav-menu" aria-hidden="true"></span>
-                Shop
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="shopcolors">
-                <span class="bi bi-palette-nav-menu" aria-hidden="true"></span>
-                Farvefilter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="todo">
-                <span class="bi bi-todo-nav-menu" aria-hidden="true"></span>
-                Todo
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="product">
-                <span class="bi bi-product-nav-menu" aria-hidden="true"></span>
-                Produkter
-            </NavLink>
-        </div>
-    </nav>
-</div>
 
 @code {
+    private User? loggedInUser;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedUser =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "loggedInUser"
+                );
+
+            if (!string.IsNullOrEmpty(savedUser))
+            {
+                loggedInUser =
+                    JsonSerializer.Deserialize<User>(savedUser);
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task Logout()
+    {
+        await JS.InvokeVoidAsync(
+            "localStorage.removeItem",
+            "loggedInUser"
+        );
+
+        loggedInUser = null;
+
+        Navigation.NavigateTo("/login", true);
+    }
+
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavMenuCssClass =>
+        collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
-
 }

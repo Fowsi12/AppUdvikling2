@@ -141,6 +141,39 @@
 
     private string status = "";
 
+    private User? loggedInUser;
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            string? savedUser =
+                await JS.InvokeAsync<string?>(
+                    "localStorage.getItem",
+                    "loggedInUser"
+                );
+
+            // Ikke logget ind
+            if (string.IsNullOrEmpty(savedUser))
+            {
+                Navigation.NavigateTo("/login", true);
+                return;
+            }
+
+            loggedInUser =
+                JsonSerializer.Deserialize<User>(savedUser);
+
+            // Logget ind, men ikke admin
+            if (loggedInUser?.Role != "admin")
+            {
+                Navigation.NavigateTo("/productlist", true);
+                return;
+            }
+
+            StateHasChanged();
+        }
+    }
+    
     private async Task HandleValidSubmit()
     {
         List<Product> products = new();
