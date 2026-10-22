@@ -16,8 +16,27 @@
   <component name="ChangeListManager">
     <list default="true" id="480e720a-3737-4ae3-8795-3abf43d06f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AppUdvikling2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AppUdvikling2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Pages/LoginPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/Pages/LoginPage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/bin/Debug/net10.0/BlazorApp1.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/BlazorApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/dotnet.js" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/dotnet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rbcswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/rbcswa.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/ref/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/ref/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/refint/BlazorApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/refint/BlazorApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.build.json.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets/htmlassetplaceholders/build/62f1zgrftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/staticwebassets/htmlassetplaceholders/build/62f1zgrftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/webcil/BlazorApp1.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp1/obj/Debug/net10.0/webcil/BlazorApp1.wasm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,61 +92,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1868561560793693" />
-      <entry key="MS500" value="1.716149008426796" />
-      <entry key="S2" value="2.1039641234320374" />
-      <entry key="S5" value="2.4867345645043404" />
-      <entry key="S10" value="2.879293253652442" />
-      <entry key="S30" value="4.067691938426686" />
-      <entry key="S60" value="4.8236449038839595" />
-      <entry key="M2" value="5.34643127933184" />
-      <entry key="M5" value="5.733161962085413" />
-      <entry key="M10" value="6.005254832839055" />
-      <entry key="M15" value="6.251594097832256" />
-      <entry key="M30" value="6.779185331812295" />
-      <entry key="H1" value="7.2598093210923516" />
-      <entry key="H2" value="7.589634047379608" />
-      <entry key="H4" value="7.783612577520488" />
-      <entry key="D1" value="11.402923909424816" />
-      <entry key="W1" value="44.2875303107521" />
+      <entry key="MS100" value="1.0008178586663292" />
+      <entry key="MS500" value="1.416905165048631" />
+      <entry key="S2" value="2.9596675899461373" />
+      <entry key="S5" value="4.663830112306753" />
+      <entry key="S10" value="6.733602107114023" />
+      <entry key="S30" value="10.401546766311622" />
+      <entry key="S60" value="12.249125137672793" />
+      <entry key="M2" value="13.47881400608364" />
+      <entry key="M5" value="14.362918116416116" />
+      <entry key="M10" value="14.813492088509287" />
+      <entry key="M15" value="15.12033335220279" />
+      <entry key="M30" value="15.710089305771298" />
+      <entry key="H1" value="16.2237168647629" />
+      <entry key="H2" value="16.571061573072114" />
+      <entry key="H4" value="16.774172010430657" />
+      <entry key="D1" value="20.400880489772053" />
+      <entry key="W1" value="53.28662892662685" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.633579852706717E-97" />
-      <entry key="MS500" value="4.831803880053124E-20" />
-      <entry key="S2" value="1.4826113723633236E-5" />
-      <entry key="S5" value="0.011711983202166312" />
-      <entry key="S10" value="0.11062731353878971" />
-      <entry key="S30" value="0.6109988470946863" />
-      <entry key="S60" value="1.0570267241516877" />
-      <entry key="M2" value="1.4364345017811442" />
-      <entry key="M5" value="1.759208275355027" />
-      <entry key="M10" value="2.01677850744559" />
-      <entry key="M15" value="2.2592649632447825" />
-      <entry key="M30" value="2.7832739622529754" />
-      <entry key="H1" value="3.262006044148622" />
-      <entry key="H2" value="3.5907873242918926" />
-      <entry key="H4" value="3.7841531263891626" />
-      <entry key="D1" value="4.0193831291151865" />
-      <entry key="W1" value="4.658783675873587" />
+      <entry key="MS100" value="5.507898041630008E-146" />
+      <entry key="MS500" value="8.87558890224107E-30" />
+      <entry key="S2" value="5.458198140150343E-8" />
+      <entry key="S5" value="0.0012446270310847538" />
+      <entry key="S10" value="0.036063407578420206" />
+      <entry key="S30" value="0.4205088968706267" />
+      <entry key="S60" value="0.8769066558461877" />
+      <entry key="M2" value="1.308336710574364" />
+      <entry key="M5" value="1.6946918430079838" />
+      <entry key="M10" value="1.9794518606278702" />
+      <entry key="M15" value="2.231301858929792" />
+      <entry key="M30" value="2.765995929954893" />
+      <entry key="H1" value="3.251865327001155" />
+      <entry key="H2" value="3.585201574004875" />
+      <entry key="H4" value="3.7812087079238212" />
+      <entry key="D1" value="4.018861718546013" />
+      <entry key="W1" value="4.658697334475582" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.18685617017672662" />
-      <entry key="MS500" value="0.7430283006349856" />
-      <entry key="S2" value="1.507953742457909" />
-      <entry key="S5" value="2.1910717305131637" />
-      <entry key="S10" value="2.808741616375797" />
-      <entry key="S30" value="4.5874459324118" />
-      <entry key="S60" value="5.820772420740477" />
-      <entry key="M2" value="6.746637190030113" />
-      <entry key="M5" value="7.4755933782529524" />
-      <entry key="M10" value="8.012271285455219" />
-      <entry key="M15" value="8.50336654216968" />
-      <entry key="M30" value="9.557641894902044" />
-      <entry key="H1" value="10.518923729633153" />
-      <entry key="H2" value="11.17881150627765" />
-      <entry key="H4" value="11.566912812927379" />
-      <entry key="D1" value="15.421694479909789" />
-      <entry key="W1" value="48.94577728761999" />
+      <entry key="MS100" value="0.9337612639784149" />
+      <entry key="MS500" value="1.3491705605243496" />
+      <entry key="S2" value="2.6823395268631076" />
+      <entry key="S5" value="4.414352474412028" />
+      <entry key="S10" value="6.570130748342998" />
+      <entry key="S30" value="10.702824291450419" />
+      <entry key="S60" value="13.04667548171871" />
+      <entry key="M2" value="14.738935880637474" />
+      <entry key="M5" value="16.035265945435665" />
+      <entry key="M10" value="16.780255145267123" />
+      <entry key="M15" value="17.342160186239006" />
+      <entry key="M30" value="18.470258303803597" />
+      <entry key="H1" value="19.47217937098655" />
+      <entry key="H2" value="20.15439558473352" />
+      <entry key="H4" value="20.554398361881027" />
+      <entry key="D1" value="24.419108037004207" />
+      <entry key="W1" value="57.94478647306818" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -254,7 +273,8 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="New changes" />
     <MESSAGE value="afl" />
-    <option name="LAST_COMMIT_MESSAGE" value="afl" />
+    <MESSAGE value="LoginPage oprettet." />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginPage oprettet." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

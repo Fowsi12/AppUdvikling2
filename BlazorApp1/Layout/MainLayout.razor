@@ -1,5 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
+@using BlazorApp1.Logic
+@using Microsoft.JSInterop
+@using System.Text.Json
+
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
 <div class="page">
 
     <main>
@@ -8,12 +14,77 @@
         </div>
 
         <article class="content px-4">
-            @Body
+            @if (authChecked)
+            {
+                @Body
+            }
+            else
+            {
+                <div class="auth-loading">
+                    Kontrollerer login...
+                </div>
+            }
         </article>
     </main>
 
     <div class="sidebar">
-        <NavMenu />
+        @if (authChecked && !IsLoginPage())
+        {
+            <div class="sidebar">
+                <NavMenu />
+            </div>
+        }
     </div>
 
 </div>
+
+@code {
+    private bool authChecked = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        string currentPage =
+            Navigation.ToBaseRelativePath(Navigation.Uri);
+
+        // Login-siden må altid åbnes
+        if (currentPage.StartsWith("login",
+                StringComparison.OrdinalIgnoreCase))
+        {
+            authChecked = true;
+            StateHasChanged();
+            return;
+        }
+
+        string? savedUser =
+            await JS.InvokeAsync<string?>(
+                "localStorage.getItem",
+                "loggedInUser"
+            );
+
+        // Ikke logget ind
+        if (string.IsNullOrEmpty(savedUser))
+        {
+            Navigation.NavigateTo("/login", true);
+            return;
+        }
+
+        authChecked = true;
+
+        StateHasChanged();
+    }
+    private bool IsLoginPage()
+    {
+        string currentPage =
+            Navigation.ToBaseRelativePath(Navigation.Uri);
+
+        return currentPage.StartsWith(
+            "login",
+            StringComparison.OrdinalIgnoreCase
+        );
+    }
+}

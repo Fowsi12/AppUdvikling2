@@ -111,8 +111,14 @@
 
         if (loggedInUser != null)
         {
+            User sessionUser = new User
+            {
+                Username = loggedInUser.Username,
+                Role = loggedInUser.Role
+            };
+
             string json =
-                JsonSerializer.Serialize(loggedInUser);
+                JsonSerializer.Serialize(sessionUser);
 
             await JS.InvokeVoidAsync(
                 "localStorage.setItem",
