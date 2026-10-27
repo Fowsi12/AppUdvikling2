@@ -6,14 +6,20 @@
 
 @inject IJSRuntime JS
 @inject NavigationManager Navigation
+
 <div class="page">
 
     <main>
+
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <a href="https://learn.microsoft.com/aspnet/core/"
+               target="_blank">
+                About
+            </a>
         </div>
 
         <article class="content px-4">
+
             @if (authChecked)
             {
                 @Body
@@ -24,17 +30,17 @@
                     Kontrollerer login...
                 </div>
             }
+
         </article>
+
     </main>
 
-    <div class="sidebar">
-        @if (authChecked && !IsLoginPage())
-        {
-            <div class="sidebar">
-                <NavMenu />
-            </div>
-        }
-    </div>
+    @if (authChecked && !IsLoginPage())
+    {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
 
 </div>
 
@@ -51,12 +57,15 @@
         string currentPage =
             Navigation.ToBaseRelativePath(Navigation.Uri);
 
-        // Login-siden må altid åbnes
-        if (currentPage.StartsWith("login",
+        // Login må åbnes uden login
+        if (currentPage.StartsWith(
+                "login",
                 StringComparison.OrdinalIgnoreCase))
         {
             authChecked = true;
+
             StateHasChanged();
+
             return;
         }
 
@@ -66,10 +75,10 @@
                 "loggedInUser"
             );
 
-        // Ikke logget ind
         if (string.IsNullOrEmpty(savedUser))
         {
             Navigation.NavigateTo("/login", true);
+
             return;
         }
 
@@ -77,6 +86,7 @@
 
         StateHasChanged();
     }
+
     private bool IsLoginPage()
     {
         string currentPage =

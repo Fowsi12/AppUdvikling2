@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BlazorApp1.Logic;
+namespace Core;
 
 public class Product
 {
+    public int Id { get; set; }
     [Required]
     [StringLength(50, MinimumLength = 2,
         ErrorMessage = "Navnet skal være mellem 2 og 50 tegn.")]

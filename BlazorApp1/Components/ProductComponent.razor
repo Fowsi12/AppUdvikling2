@@ -1,4 +1,4 @@
-@using BlazorApp1.Logic
+@using Core
 
 <tr>
     <td class="product-name">
@@ -33,7 +33,8 @@
             </span>
         }
     </td>
-@if (IsAdmin)
+
+    @if (IsAdmin)
     {
         <td class="delete-cell">
             <button class="delete-product-button"
@@ -48,10 +49,10 @@
 @code {
     [Parameter]
     public Product Product { get; set; } = new();
-    
+
     [Parameter]
     public EventCallback<Product> OnDelete { get; set; }
-    
+
     [Parameter]
     public bool IsAdmin { get; set; }
 

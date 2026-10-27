@@ -1,5 +1,6 @@
 @page "/search"
 
+@using System.Net.Http.Json
 @inject HttpClient Http
 
 <h3>SearchPage</h3>
@@ -48,99 +49,88 @@ else
 }
 
 @code {
-    string[]? viewedWords;
+    private string[]? viewedWords;
 
-    string[] allWords = Array.Empty<string>();
+    private string searchText = "";
 
-    string searchText = "";
-    
-    string searchDescription = "";
-    int visibleCount = 10;
+    private string searchDescription = "";
+
+    private int visibleCount = 10;
 
     protected override async Task OnInitializedAsync()
     {
-        allWords = await LoadAllWords();
-
-        viewedWords = allWords.Take(100).ToArray();
+        viewedWords =
+            await Http.GetFromJsonAsync<string[]>(
+                "http://localhost:5186/word/100"
+            );
     }
 
-    private async Task<string[]> LoadAllWords()
+    private async Task SearchStartsWith()
     {
-        string content =
-            await Http.GetStringAsync("sample-data/words.txt");
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            return;
+        }
 
-        await Task.Delay(3000);
-
-        return content.Split("\n");
-    }
-
-    private void SearchStartsWith()
-    {
         visibleCount = 10;
 
-        viewedWords = allWords
-            .Where(word =>
-                word.StartsWith(
-                    searchText,
-                    StringComparison.OrdinalIgnoreCase))
-            .ToArray();
+        string search =
+            Uri.EscapeDataString(searchText.Trim());
+  // gør søgeteksten sikker at putte ind i en URL. Det bliver især nyttigt, hvis teksten indeholder mellemrum eller særlige tegn.      
+        
+  
+  
+        viewedWords =
+            await Http.GetFromJsonAsync<string[]>(
+                $"http://localhost:5186/word/startswith/{search}"
+            );
 
         searchDescription =
             $"starter med \"{searchText}\"";
     }
 
-    private void SearchContains()
+    private async Task SearchContains()
     {
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            return;
+        }
+
         visibleCount = 10;
 
-        viewedWords = allWords
-            .Where(word =>
-                word.Contains(
-                    searchText,
-                    StringComparison.OrdinalIgnoreCase))
-            .ToArray();
+        string search =
+            Uri.EscapeDataString(searchText.Trim());
+
+        viewedWords =
+            await Http.GetFromJsonAsync<string[]>(
+                $"http://localhost:5186/word/contains/{search}"
+            );
 
         searchDescription =
             $"indeholder \"{searchText}\"";
     }
 
-    private void SearchDistanceOne()
+    private async Task SearchDistanceOne()
     {
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            return;
+        }
+
         visibleCount = 10;
 
-        viewedWords = allWords
-            .Where(word => HasDistanceOne(word.Trim(), searchText))
-            .ToArray();
+        string search =
+            Uri.EscapeDataString(searchText.Trim());
+
+        viewedWords =
+            await Http.GetFromJsonAsync<string[]>(
+                $"http://localhost:5186/word/distanceone/{search}"
+            );
 
         searchDescription =
             $"har distance 1 til \"{searchText}\"";
     }
 
-    private bool HasDistanceOne(string word, string search)
-    {
-        if (word.Length != search.Length)
-        {
-            return false;
-        }
-
-        int differences = 0;
-
-        for (int i = 0; i < word.Length; i++)
-        {
-            if (char.ToLower(word[i]) !=
-                char.ToLower(search[i]))
-            {
-                differences++;
-            }
-
-            if (differences > 1)
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
     private void ShowMore()
     {
         visibleCount += 10;

@@ -1,77 +1,219 @@
+/* =========================================================
+   OVERORDNET LAYOUT
+   ========================================================= */
+
 .page {
     position: relative;
+
     display: flex;
     flex-direction: column;
+
+    min-height: 100vh;
+
+    background: #ffffff;
 }
+
+
+/* =========================================================
+   HOVEDINDHOLD
+   ========================================================= */
 
 main {
     flex: 1;
+
+    min-width: 0;
+
+    background: #ffffff;
 }
+
+.content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SIDEBAR / NAVBAR
+   ========================================================= */
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(40, 178, 255) 0%, #3a0647 70%);
+    background:
+            linear-gradient(
+                    180deg,
+                    rgb(40, 178, 255) 0%,
+                    #3a0647 70%
+            );
 }
+
+
+/* =========================================================
+   TOP ROW I HOVEDINDHOLDET
+   ========================================================= */
 
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
     height: 3.5rem;
+
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
+    flex-shrink: 0;
+
+    background-color: #f7f7f7;
+
+    border-bottom: 1px solid #e5e7eb;
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
+.top-row ::deep a,
+.top-row ::deep .btn-link {
+    margin-left: 1.5rem;
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
+    color: #4b5563;
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    white-space: nowrap;
+
+    text-decoration: none;
+}
+
+.top-row ::deep a:hover,
+.top-row ::deep .btn-link:hover {
+    color: #111827;
+
+    text-decoration: none;
+}
+
+.top-row ::deep a:first-child {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   LOGIN / AUTH LOADING
+   ========================================================= */
+
+.auth-loading {
+    min-height: 60vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6b7280;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 640.98px) {
-    .top-row {
-        justify-content: space-between;
+
+    .page {
+        flex-direction: column;
     }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
+    /*
+       På mobil kommer navbaren øverst,
+       selvom <main> står før .sidebar i MainLayout.
+    */
+    .sidebar {
+        order: 0;
+
+        width: 100%;
+    }
+
+    main {
+        order: 1;
+
+        width: 100%;
+    }
+
+    .top-row {
+        height: 3.5rem;
+
+        justify-content: flex-end;
+    }
+
+    .top-row ::deep a,
+    .top-row ::deep .btn-link {
         margin-left: 0;
+    }
+
+    article.content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 }
 
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
 @media (min-width: 641px) {
+
     .page {
+        /*
+           main først + sidebar bagefter betyder,
+           at navbaren ligger til HØJRE.
+        */
         flex-direction: row;
+
+        align-items: flex-start;
+    }
+
+    main {
+        flex: 1;
+
+        min-width: 0;
+
+        /*
+           VIGTIGT:
+           Main må vokse frit i højden.
+           Derfor kan Weather, Todo, ProductList osv.
+           stadig bruge browserens normale scroll.
+        */
+        min-height: 100vh;
     }
 
     .sidebar {
         width: 250px;
         height: 100vh;
+
+        flex: 0 0 250px;
+
         position: sticky;
         top: 0;
+
+        /*
+           Selve sidebaren scroller ikke.
+           NavMenu styrer selv scroll på menupunkterne.
+        */
+        overflow: hidden;
     }
 
     .top-row {
         position: sticky;
         top: 0;
-        z-index: 1;
+
+        z-index: 10;
     }
 
     .top-row.auth ::deep a:first-child {
         flex: 1;
-        text-align: right;
+
         width: 0;
+
+        text-align: right;
     }
 
-    .top-row, article {
+    .top-row,
+    article.content {
         padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
+        padding-right: 2rem !important;
     }
 }

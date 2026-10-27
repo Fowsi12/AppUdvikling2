@@ -1,5 +1,9 @@
 ﻿@page "/weather"
 
+@using Core 
+@using System.Net.Http.Json
+@inject HttpClient Http
+
 <PageTitle>Weather</PageTitle>
 
 <div class="weather-page">
@@ -118,46 +122,15 @@
 
     private string filter = "Alle";
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        string[] summaries =
-        {
-            "Koldt og blæsende",
-            "Varmt og solrigt",
-            "Stille og gråt"
-        };
+        WeatherForecast[]? apiForecasts =
+            await Http.GetFromJsonAsync<WeatherForecast[]>(
+                "http://localhost:5186/Api/vejr/random/20"
+            );
 
-        string[] locations =
-        {
-            "Aarhus",
-            "Odense",
-            "København",
-            "Aalborg",
-            "Esbjerg",
-            "Vejle",
-            "Randers",
-            "Roskilde"
-        };
-
-        for (int i = 0; i < 20; i++)
-        {
-            WeatherForecast forecast = new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(i)),
-
-                TemperatureC = Random.Shared.Next(1, 21),
-
-                Summary = summaries[
-                    Random.Shared.Next(summaries.Length)
-                ],
-
-                Location = locations[
-                    Random.Shared.Next(locations.Length)
-                ]
-            };
-
-            forecasts.Add(forecast);
-        }
+        forecasts = apiForecasts?.ToList()
+                    ?? new List<WeatherForecast>();
     }
 
     private IEnumerable<WeatherForecast> GetForecasts()
@@ -166,12 +139,14 @@
 
         if (filter == "Kolde")
         {
-            result = result.Where(f => f.TemperatureC <= 10);
+            result = result.Where(
+                f => f.TemperatureC <= 10);
         }
 
         if (filter == "Varme")
         {
-            result = result.Where(f => f.TemperatureC > 10);
+            result = result.Where(
+                f => f.TemperatureC > 10);
         }
 
         return result.Take(numberToShow);
@@ -206,19 +181,5 @@
         {
             numberToShow -= 5;
         }
-    }
-
-    public class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public string? Location { get; set; }
-
-        public int TemperatureF =>
-            32 + (int)(TemperatureC / 0.5556);
     }
 }

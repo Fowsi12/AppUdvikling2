@@ -1,12 +1,18 @@
 @page "/product"
+
+@using Core
 @using BlazorApp1.Logic
+@using BlazorApp1.Components
+@using System.Net.Http.Json
 @using Microsoft.JSInterop
 @using System.Text.Json
+
+@inject HttpClient Http
 @inject IJSRuntime JS
 @inject NavigationManager Navigation
-@using BlazorApp1.Components
 
 <PageTitle>Produkter</PageTitle>
+
 <TimeComponent />
 
 <div class="product-page">
@@ -142,7 +148,7 @@
     private string status = "";
 
     private User? loggedInUser;
-    
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -153,7 +159,6 @@
                     "loggedInUser"
                 );
 
-            // Ikke logget ind
             if (string.IsNullOrEmpty(savedUser))
             {
                 Navigation.NavigateTo("/login", true);
@@ -163,7 +168,7 @@
             loggedInUser =
                 JsonSerializer.Deserialize<User>(savedUser);
 
-            // Logget ind, men ikke admin
+            // Kun admin må oprette produkter
             if (loggedInUser?.Role != "admin")
             {
                 Navigation.NavigateTo("/productlist", true);
@@ -173,42 +178,25 @@
             StateHasChanged();
         }
     }
-    
+
     private async Task HandleValidSubmit()
     {
-        List<Product> products = new();
-
-        string? savedProducts =
-            await JS.InvokeAsync<string?>(
-                "localStorage.getItem",
-                "products"
+        HttpResponseMessage response =
+            await Http.PostAsJsonAsync(
+                "http://localhost:5186/api/product",
+                aProduct
             );
 
-        if (!string.IsNullOrEmpty(savedProducts))
+        if (response.IsSuccessStatusCode)
         {
-            List<Product>? loadedProducts =
-                JsonSerializer.Deserialize<List<Product>>(savedProducts);
+            status = "Produktet blev gemt.";
 
-            if (loadedProducts != null)
-            {
-                products = loadedProducts;
-            }
+            aProduct = new Product();
         }
-
-        products.Add(aProduct);
-
-        string json =
-            JsonSerializer.Serialize(products);
-
-        await JS.InvokeVoidAsync(
-            "localStorage.setItem",
-            "products",
-            json
-        );
-
-        status = $"{aProduct.Name} blev tilføjet.";
-
-        aProduct = new Product();
+        else
+        {
+            status = "Der opstod en fejl ved gemning af produktet.";
+        }
     }
 
     private void ResetForm()

@@ -1,3 +1,7 @@
+/* =========================================================
+   NAVBAR - OVERORDNET LAYOUT
+   ========================================================= */
+
 .nav-shell[b-da4la3n260] {
     height: 100vh;
 
@@ -7,125 +11,280 @@
     overflow: hidden;
 }
 
-.navbar-toggler[b-da4la3n260] {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
 .top-row[b-da4la3n260] {
     min-height: 3.5rem;
 
     flex-shrink: 0;
 
-    background-color: rgba(0,0,0,0.4);
-}
-
-.bi-dice-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM4.5 5A1.5 1.5 0 1 1 4.5 2a1.5 1.5 0 0 1 0 3zm0 9A1.5 1.5 0 1 1 4.5 11a1.5 1.5 0 0 1 0 3zM8 9.5A1.5 1.5 0 1 1 8 6.5a1.5 1.5 0 0 1 0 3zm3.5-4.5A1.5 1.5 0 1 1 11.5 2a1.5 1.5 0 0 1 0 3zm0 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z'/%3E%3C/svg%3E");
-}
-
-.bi-dice-cup-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M3 5h10l-1.5 9h-7z'/%3E%3Crect x='3' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='4' cy='2' r='.35' fill='%23000'/%3E%3Ccircle cx='5' cy='3' r='.35' fill='%23000'/%3E%3Crect x='7' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='8.5' cy='2.5' r='.35' fill='%23000'/%3E%3Crect x='11' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='12' cy='2' r='.35' fill='%23000'/%3E%3Ccircle cx='13' cy='3' r='.35' fill='%23000'/%3E%3C/svg%3E");
-}
-
-.bi-palette-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M8 0C3.58 0 0 2.91 0 6.5S3.58 13 8 13h1.2c.7 0 1.3-.6 1.3-1.3 0-.35-.14-.67-.37-.9-.23-.24-.38-.56-.38-.91 0-.71.58-1.29 1.29-1.29H12c2.21 0 4-1.79 4-4C16 2.06 12.42 0 8 0zM3.5 7A1.5 1.5 0 1 1 3.5 4a1.5 1.5 0 0 1 0 3zm2-3A1.5 1.5 0 1 1 5.5 1a1.5 1.5 0 0 1 0 3zm3 0A1.5 1.5 0 1 1 8.5 1a1.5 1.5 0 0 1 0 3zm3 2A1.5 1.5 0 1 1 11.5 3a1.5 1.5 0 0 1 0 3z'/%3E%3C/svg%3E");
-}
-
-.bi-todo-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M3.854 5.146a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708L1.5 6.793l1.646-1.647a.5.5 0 0 1 .708 0zM5 6.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5zm-1.146 3.646a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708 0zM5 11.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
-}
-
-.bi-product-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M8.21.8a.5.5 0 0 0-.42 0l-6 2.7A.5.5 0 0 0 1.5 4v8a.5.5 0 0 0 .29.46l6 2.7a.5.5 0 0 0 .42 0l6-2.7A.5.5 0 0 0 14.5 12V4a.5.5 0 0 0-.29-.46l-6-2.7zM8 1.8 12.77 4 8 6.15 3.23 4 8 1.8zM2.5 4.77 7.5 7v6.93l-5-2.25V4.77zm6 9.16V7l5-2.23v6.91l-5 2.25z'/%3E%3C/svg%3E");
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand[b-da4la3n260] {
     font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
 }
 
-.bi[b-da4la3n260] {
-    display: inline-block;
-    position: relative;
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.75rem;
-    top: -1px;
-    background-size: cover;
+.navbar-toggler[b-da4la3n260] {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.bi-house-door-fill-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+
+/* =========================================================
+   SCROLLBART MENUOMRÅDE
+   ========================================================= */
+
+.nav-scrollable[b-da4la3n260] {
+    min-height: 0;
 }
+
+.nav-scrollable[b-da4la3n260]::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav-scrollable[b-da4la3n260]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.nav-scrollable[b-da4la3n260]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+.nav-scrollable[b-da4la3n260]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================================
+   SEKTIONSTITLER
+   ========================================================= */
+
+.nav-section-title[b-da4la3n260] {
+    padding: 18px 24px 7px;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION ITEMS
+   ========================================================= */
 
 .nav-item[b-da4la3n260] {
     font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+
+    padding: 0 12px 5px;
 }
 
-    .nav-item:first-of-type[b-da4la3n260] {
-        padding-top: 1rem;
-    }
+.nav-item[b-da4la3n260]  a {
+    height: 2.75rem;
 
-    .nav-item:last-of-type[b-da4la3n260] {
-        padding-bottom: 1rem;
-    }
+    display: flex;
+    align-items: center;
 
-    .nav-item[b-da4la3n260]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+    padding: 0 12px;
 
-.nav-item[b-da4la3n260]  a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
+    border-radius: 9px;
+
+    color: #d7d7d7;
+
+    line-height: normal;
+
+    text-decoration: none;
+
+    transition:
+            background-color 0.15s ease,
+            color 0.15s ease,
+            transform 0.15s ease;
 }
 
 .nav-item[b-da4la3n260]  a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.10);
+
     color: white;
+
+    transform: translateX(2px);
 }
 
-@media (min-width: 641px) {
+.nav-item[b-da4la3n260]  a.active {
+    background-color: rgba(255, 255, 255, 0.20);
 
-    .navbar-toggler[b-da4la3n260] {
-        display: none;
-    }
+    color: white;
 
-    .collapse[b-da4la3n260] {
-        display: block;
-    }
-
-    .nav-scrollable[b-da4la3n260] {
-        flex: 1;
-        min-height: 0;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+    font-weight: 600;
 }
+
+
+/* =========================================================
+   GENEREL ICON-STYLING
+   ========================================================= */
+
+.bi[b-da4la3n260] {
+    display: inline-block;
+
+    position: relative;
+
+    width: 1.25rem;
+    height: 1.25rem;
+
+    flex-shrink: 0;
+
+    margin-right: 0.75rem;
+
+    top: -1px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+.bi-house-door-fill-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
 
 .bi-timer-nav-menu[b-da4la3n260] {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 0a.5.5 0 0 0 0 1H7v1.07A6.002 6.002 0 0 0 2 8a6 6 0 1 0 7-5.93V1h.5a.5.5 0 0 0 0-1h-3zm1 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm.5 2.5a.5.5 0 0 0-1 0V8c0 .133.053.26.146.354l1.75 1.75a.5.5 0 0 0 .708-.708L8 7.793V5.5z'/%3E%3C/svg%3E");
 }
 
+
+/* =========================================================
+   WEATHER
+   ========================================================= */
+
 .bi-weather-wind-nav-menu[b-da4la3n260] {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M6 13.5a2.5 2.5 0 0 1 0-5 3.5 3.5 0 0 1 6.72-.98A2.3 2.3 0 1 1 13.5 12H6.8a1.8 1.8 0 0 0-.8 1.5zm-3.5-.5a.5.5 0 0 1 0-1H9a1 1 0 1 0 0-2H1.5a.5.5 0 0 1 0-1H9a2 2 0 1 1 0 4H2.5zm1-3a.5.5 0 0 1 0-1H8a1 1 0 1 0 0-2H4.5a.5.5 0 0 1 0-1H8a2 2 0 1 1 0 4H3.5z'/%3E%3C/svg%3E");
 }
+
+
+/* =========================================================
+   DIECUP
+   ========================================================= */
+
+.bi-dice-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM4.5 5A1.5 1.5 0 1 1 4.5 2a1.5 1.5 0 0 1 0 3zm0 9A1.5 1.5 0 1 1 4.5 11a1.5 1.5 0 0 1 0 3zM8 9.5A1.5 1.5 0 1 1 8 6.5a1.5 1.5 0 0 1 0 3zm3.5-4.5A1.5 1.5 0 1 1 11.5 2a1.5 1.5 0 0 1 0 3zm0 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   MYDICES
+   ========================================================= */
+
+.bi-dice-cup-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M3 5h10l-1.5 9h-7z'/%3E%3Crect x='3' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='4' cy='2' r='.35' fill='%23000'/%3E%3Ccircle cx='5' cy='3' r='.35' fill='%23000'/%3E%3Crect x='7' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='8.5' cy='2.5' r='.35' fill='%23000'/%3E%3Crect x='11' y='1' width='3' height='3' rx='.5' fill='white'/%3E%3Ccircle cx='12' cy='2' r='.35' fill='%23000'/%3E%3Ccircle cx='13' cy='3' r='.35' fill='%23000'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   SHOP
+   ========================================================= */
 
 .bi-shop-bag-nav-menu[b-da4la3n260] {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M10.5 5V4a2.5 2.5 0 0 0-5 0v1H3.5a.5.5 0 0 0-.498.55l.75 8A.5.5 0 0 0 4.25 14h7.5a.5.5 0 0 0 .498-.45l.75-8A.5.5 0 0 0 12.5 5h-2zm-4 0V4a1.5 1.5 0 0 1 3 0v1h-3zm1.28 6.72c-.8 0-1.46-.33-1.95-.73l.58-.69c.34.28.8.53 1.34.53.5 0 .81-.2.81-.53 0-.35-.29-.48-.96-.66-.94-.25-1.58-.63-1.58-1.54 0-.84.62-1.44 1.5-1.61V5.9h.9v.82c.58.07 1 .29 1.35.57l-.52.72a1.9 1.9 0 0 0-1.15-.42c-.43 0-.69.19-.69.49 0 .33.27.45 1 .64.97.25 1.54.69 1.54 1.56 0 .85-.61 1.49-1.58 1.63v.78h-.9v-.77z'/%3E%3C/svg%3E");
 }
 
+
+/* =========================================================
+   FARVEFILTER
+   ========================================================= */
+
+.bi-palette-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M8 0C3.58 0 0 2.91 0 6.5S3.58 13 8 13h1.2c.7 0 1.3-.6 1.3-1.3 0-.35-.14-.67-.37-.9-.23-.24-.38-.56-.38-.91 0-.71.58-1.29 1.29-1.29H12c2.21 0 4-1.79 4-4C16 2.06 12.42 0 8 0zM3.5 7A1.5 1.5 0 1 1 3.5 4a1.5 1.5 0 0 1 0 3zm2-3A1.5 1.5 0 1 1 5.5 1a1.5 1.5 0 0 1 0 3zm3 0A1.5 1.5 0 1 1 8.5 1a1.5 1.5 0 0 1 0 3zm3 2A1.5 1.5 0 1 1 11.5 3a1.5 1.5 0 0 1 0 3z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   TODO
+   ========================================================= */
+
+.bi-todo-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M3.854 5.146a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708L1.5 6.793l1.646-1.647a.5.5 0 0 1 .708 0zM5 6.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5zm-1.146 3.646a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708 0zM5 11.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   ORDSØGNING
+   ========================================================= */
+
+.bi-search-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85-.018.016zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   PRODUKTER
+   ========================================================= */
+
+.bi-product-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M8.21.8a.5.5 0 0 0-.42 0l-6 2.7A.5.5 0 0 0 1.5 4v8a.5.5 0 0 0 .29.46l6 2.7a.5.5 0 0 0 .42 0l6-2.7A.5.5 0 0 0 14.5 12V4a.5.5 0 0 0-.29-.46l-6-2.7zM8 1.8 12.77 4 8 6.15 3.23 4 8 1.8zM2.5 4.77 7.5 7v6.93l-5-2.25V4.77zm6 9.16V7l5-2.23v6.91l-5 2.25z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   TILFØJ PRODUKT - ADMIN
+   ========================================================= */
+
+.bi-add-product-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M8 1a.5.5 0 0 1 .5.5v6h6a.5.5 0 0 1 0 1h-6v6a.5.5 0 0 1-1 0v-6h-6a.5.5 0 0 1 0-1h6v-6A.5.5 0 0 1 8 1z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   LOGIN / LOGOUT ICONS
+   ========================================================= */
+
+.bi-login-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M10 8a.5.5 0 0 0-.5-.5H3.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.707 8.5H9.5A.5.5 0 0 0 10 8z'/%3E%3Cpath d='M13 1.5A1.5 1.5 0 0 1 14.5 3v10a1.5 1.5 0 0 1-1.5 1.5H8.5a.5.5 0 0 1 0-1H13a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H8.5a.5.5 0 0 1 0-1H13z'/%3E%3C/svg%3E");
+}
+
+.bi-logout-nav-menu[b-da4la3n260] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M6 8a.5.5 0 0 1 .5-.5h5.793l-2.147-2.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.293 8.5H6.5A.5.5 0 0 1 6 8z'/%3E%3Cpath d='M3 1.5A1.5 1.5 0 0 0 1.5 3v10A1.5 1.5 0 0 0 3 14.5h4.5a.5.5 0 0 0 0-1H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 0 0-1H3z'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   FAST FOOTER
+   ========================================================= */
+
+.nav-footer[b-da4la3n260] {
+    flex-shrink: 0;
+
+    padding: 12px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   LOGGET IND BRUGER
+   ========================================================= */
+
 .login-status[b-da4la3n260] {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 10px;
+
     padding: 10px;
 
     border-radius: 12px;
@@ -146,10 +305,11 @@
     border-radius: 10px;
 
     background: rgba(255, 255, 255, 0.18);
+
     color: white;
 
-    font-weight: 800;
     font-size: 1rem;
+    font-weight: 800;
 }
 
 .user-info[b-da4la3n260] {
@@ -163,15 +323,26 @@
     color: white;
 
     font-size: 0.9rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .user-info span[b-da4la3n260] {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.60);
 
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+
+    letter-spacing: 0.7px;
 }
+
+
+/* =========================================================
+   LOG UD
+   ========================================================= */
 
 .logout-button[b-da4la3n260] {
     width: 100%;
@@ -180,45 +351,36 @@
     display: flex;
     align-items: center;
 
-    border: none;
-    border-radius: 8px;
-
     padding: 0 12px;
 
-    background: rgba(255, 255, 255, 0.08);
-    color: #d7d7d7;
+    border: none;
+    border-radius: 9px;
 
-    text-align: left;
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #d7d7d7;
 
     font-size: 0.9rem;
 
+    text-align: left;
+
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
 }
 
 .logout-button:hover[b-da4la3n260] {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.16);
+
     color: white;
 }
 
-.bi-login-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M10 8a.5.5 0 0 0-.5-.5H3.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.707 8.5H9.5A.5.5 0 0 0 10 8z'/%3E%3Cpath d='M13 1.5A1.5 1.5 0 0 1 14.5 3v10a1.5 1.5 0 0 1-1.5 1.5H8.5a.5.5 0 0 1 0-1H13a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H8.5a.5.5 0 0 1 0-1H13z'/%3E%3C/svg%3E");
-}
 
-.bi-logout-nav-menu[b-da4la3n260] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M6 8a.5.5 0 0 1 .5-.5h5.793l-2.147-2.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.293 8.5H6.5A.5.5 0 0 1 6 8z'/%3E%3Cpath d='M3 1.5A1.5 1.5 0 0 0 1.5 3v10A1.5 1.5 0 0 0 3 14.5h4.5a.5.5 0 0 0 0-1H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 0 0-1H3z'/%3E%3C/svg%3E");
-}
-
-.nav-footer[b-da4la3n260] {
-    flex-shrink: 0;
-
-    padding: 12px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    background: rgba(0, 0, 0, 0.15);
-}
+/* =========================================================
+   LOG IND
+   ========================================================= */
 
 .login-nav-button[b-da4la3n260] {
     width: 100%;
@@ -229,16 +391,73 @@
 
     padding: 0 12px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     color: #d7d7d7;
 
     text-decoration: none;
 
-    transition: 0.2s;
+    transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
 }
 
 .login-nav-button:hover[b-da4la3n260] {
     background: rgba(255, 255, 255, 0.12);
+
     color: white;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 641px) {
+
+    .navbar-toggler[b-da4la3n260] {
+        display: none;
+    }
+
+    .collapse[b-da4la3n260] {
+        display: block;
+    }
+
+    .nav-scrollable[b-da4la3n260] {
+        flex: 1;
+
+        min-height: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .nav-shell[b-da4la3n260] {
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .nav-scrollable[b-da4la3n260] {
+        max-height: calc(100vh - 3.5rem);
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .nav-footer[b-da4la3n260] {
+        position: relative;
+    }
+
+    .nav-section-title[b-da4la3n260] {
+        padding-left: 24px;
+    }
 }

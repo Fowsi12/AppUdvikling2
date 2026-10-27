@@ -1,8 +1,9 @@
 @page "/todo"
-@using BlazorApp1.Logic
-@using Microsoft.JSInterop
-@using System.Text.Json
-@inject IJSRuntime JS
+
+@using Core
+@using System.Net.Http.Json
+
+@inject HttpClient Http
 
 <PageTitle>Todo</PageTitle>
 
@@ -118,73 +119,80 @@
 
     private string newTitle = "";
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnInitializedAsync()
     {
-        if (firstRender)
-        {
-            string? savedTodos =
-                await JS.InvokeAsync<string?>(
-                    "localStorage.getItem",
-                    "todoItems"
-                );
+        await LoadTodos();
+    }
 
-            if (!string.IsNullOrEmpty(savedTodos))
-            {
-                List<TodoItem>? loadedItems =
-                    JsonSerializer.Deserialize<List<TodoItem>>(savedTodos);
+    private async Task LoadTodos()
+    {
+        TodoItem[]? items =
+            await Http.GetFromJsonAsync<TodoItem[]>(
+                "http://localhost:5186/api/todo"
+            );
 
-                if (loadedItems != null)
-                {
-                    todoItems = loadedItems;
-                }
-            }
-
-            StateHasChanged();
-        }
+        todoItems = items?.ToList()
+                    ?? new List<TodoItem>();
     }
 
     private async Task AddTodo()
     {
-        if (!string.IsNullOrWhiteSpace(newTitle))
+        if (string.IsNullOrWhiteSpace(newTitle))
         {
-            TodoItem item = new TodoItem
-            {
-                Title = newTitle,
-                IsDone = false
-            };
+            return;
+        }
 
-            todoItems.Add(item);
+        TodoItem item = new TodoItem
+        {
+            Title = newTitle,
+            IsDone = false
+        };
 
+        HttpResponseMessage response =
+            await Http.PostAsJsonAsync(
+                "http://localhost:5186/api/todo",
+                item
+            );
+
+        if (response.IsSuccessStatusCode)
+        {
             newTitle = "";
 
-            await SaveTodos();
+            await LoadTodos();
         }
     }
 
-    private async Task SaveTodos()
-    {
-        string json =
-            JsonSerializer.Serialize(todoItems);
-
-        await JS.InvokeVoidAsync(
-            "localStorage.setItem",
-            "todoItems",
-            json
-        );
-    }
     private async Task DeleteTodo(TodoItem item)
     {
-        todoItems.Remove(item);
+        HttpResponseMessage response =
+            await Http.DeleteAsync(
+                $"http://localhost:5186/api/todo/{item.Id}"
+            );
 
-        await SaveTodos();
+        if (response.IsSuccessStatusCode)
+        {
+            await LoadTodos();
+        }
     }
-    private async Task ToggleTodo(TodoItem item, ChangeEventArgs e)
+
+    private async Task ToggleTodo(
+        TodoItem item,
+        ChangeEventArgs e)
     {
         if (e.Value is bool isDone)
         {
             item.IsDone = isDone;
         }
 
-        await SaveTodos();
+        HttpResponseMessage response =
+            await Http.PutAsJsonAsync(
+                $"http://localhost:5186/api/todo/{item.Id}",
+                item
+            );
+
+        if (response.IsSuccessStatusCode)
+        {
+            await LoadTodos();
+        }
     }
 }
