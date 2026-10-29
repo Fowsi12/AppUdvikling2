@@ -2,15 +2,27 @@ using Backend.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Tilføjer Controllers til Backend.
 builder.Services.AddControllers();
+
+
+// Tilføjer Swagger, så vi kan dokumentere og teste vores API.
 builder.Services.AddSwaggerGen();
 
 
+// TodoRepository bruger nu MongoDB.
+// Singleton betyder, at Backend genbruger det samme repository-objekt.
 builder.Services.AddSingleton<ITodoRepository, TodoRepositoryMongoDB>();
-// Singleton betyder, at Backend opretter ét TodoRepositoryInMemory-objekt og bruger det samme objekt hele tiden.
 
+
+// Product bruger stadig vores InMemory repository.
+// Denne ændrer vi senere til MongoDB.
 builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
 
+
+// CORS gør det muligt for vores Blazor frontend
+// at sende requests til Backend.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("policy",
@@ -23,35 +35,31 @@ builder.Services.AddCors(options =>
         });
 });
 
+
+// Bygger applikationen.
+// Alle builder.Services skal være registreret INDEN denne linje.
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
+// Swagger bruges kun under development.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-string backendUrl =
-    builder.Configuration["BackendUrl"]
-    ?? throw new Exception(
-        "BackendUrl mangler i appsettings.json"
-    );
 
-builder.Services.AddScoped(sp => new HttpClient
-{
-    BaseAddress = new Uri(
-        backendUrl.TrimEnd('/') + "/"
-    )
-});
-
-app.UseHttpsRedirection();
-
+// Aktiverer vores CORS-policy.
 app.UseCors("policy");
 
+
+// Authorization middleware.
 app.UseAuthorization();
 
+
+// Finder vores Controllers og deres API-routes.
 app.MapControllers();
 
+
+// Starter Backend.
 app.Run();
