@@ -18,9 +18,15 @@
     <div class="product-header">
 
         <div>
-            <span class="product-eyebrow">PRODUKTADMINISTRATION</span>
+            <span class="product-eyebrow">
+                PRODUKTADMINISTRATION
+            </span>
+
             <h1>Produktliste</h1>
-            <p>Se og administrer dine oprettede produkter.</p>
+
+            <p>
+                Se og administrer dine oprettede produkter.
+            </p>
         </div>
 
         @if (loggedInUser?.Role == "admin")
@@ -40,7 +46,10 @@
             <div class="list-header">
 
                 <div>
-                    <span class="product-eyebrow">PRODUKTLISTE</span>
+                    <span class="product-eyebrow">
+                        PRODUKTLISTE
+                    </span>
+
                     <h2>Oprettede produkter</h2>
                 </div>
 
@@ -61,18 +70,23 @@
                             <th>Stock</th>
                             <th>Kategori</th>
                             <th>Published</th>
-                            <th></th>
+
+                            @if (loggedInUser?.Role == "admin")
+                            {
+                                <th></th>
+                            }
                         </tr>
                     </thead>
 
                     <tbody>
 
-                    @foreach (Product product in products)
-                    {
-                        <ProductComponent Product="product"
-                                          IsAdmin="@(loggedInUser?.Role == "admin")"
-                                          OnDelete="ConfirmDelete" />
-                    }
+                        @foreach (Product product in products)
+                        {
+                            <ProductComponent
+                                Product="product"
+                                IsAdmin="@(loggedInUser?.Role == "admin")"
+                                OnDelete="ConfirmDelete" />
+                        }
 
                     </tbody>
 
@@ -84,18 +98,20 @@
     }
     else
     {
-        <p>Der er endnu ikke oprettet nogen produkter.</p>
+        <p>
+            Der er endnu ikke oprettet nogen produkter.
+        </p>
     }
 
 </div>
 
 @code {
-
     private User? loggedInUser;
 
     private List<Product> products = new();
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(
+        bool firstRender)
     {
         if (firstRender)
         {
@@ -108,6 +124,7 @@
             if (string.IsNullOrEmpty(savedUser))
             {
                 Navigation.NavigateTo("/login", true);
+
                 return;
             }
 
@@ -124,13 +141,13 @@
     {
         Product[]? apiProducts =
             await Http.GetFromJsonAsync<Product[]>(
-                "http://localhost:5186/api/product"
+                "api/product"
             );
 
-        products = apiProducts?.ToList()
-                   ?? new List<Product>();
+        products =
+            apiProducts?.ToList()
+            ?? new List<Product>();
 
-        // Almindelige brugere må kun se publicerede produkter
         if (loggedInUser?.Role != "admin")
         {
             products = products
@@ -146,7 +163,6 @@
 
     private async Task ConfirmDelete(Product product)
     {
-        // Kun admin må slette
         if (loggedInUser?.Role != "admin")
         {
             return;
@@ -165,7 +181,7 @@
 
         HttpResponseMessage response =
             await Http.DeleteAsync(
-                $"http://localhost:5186/api/product/{product.Id}"
+                $"api/product/{product.Id}"
             );
 
         if (response.IsSuccessStatusCode)

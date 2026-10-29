@@ -1,7 +1,8 @@
 ﻿@page "/weather"
 
-@using Core 
+@using Core
 @using System.Net.Http.Json
+
 @inject HttpClient Http
 
 <PageTitle>Weather</PageTitle>
@@ -25,25 +26,34 @@
             <span class="toolbar-title">Filtrer vejr</span>
 
             <div class="toolbar-buttons">
-                <button class="filter-button all" @onclick="ShowAll">
+
+                <button class="filter-button all"
+                        @onclick="ShowAll">
                     Alle
                 </button>
 
-                <button class="filter-button cold" @onclick="ShowCold">
+                <button class="filter-button cold"
+                        @onclick="ShowCold">
                     ❄ Kolde
                 </button>
 
-                <button class="filter-button warm" @onclick="ShowWarm">
+                <button class="filter-button warm"
+                        @onclick="ShowWarm">
                     ☀ Varme
                 </button>
+
             </div>
         </div>
 
         <div class="toolbar-section">
-            <span class="toolbar-title">Antal vejrudsigter</span>
+            <span class="toolbar-title">
+                Antal vejrudsigter
+            </span>
 
             <div class="toolbar-buttons">
-                <button class="amount-button more" @onclick="ShowMore">
+
+                <button class="amount-button more"
+                        @onclick="ShowMore">
                     + Vis flere
                 </button>
 
@@ -52,6 +62,7 @@
                         disabled="@(numberToShow <= 5)">
                     − Vis færre
                 </button>
+
             </div>
         </div>
 
@@ -60,6 +71,7 @@
     <div class="weather-table-card">
 
         <table class="weather-table">
+
             <thead>
                 <tr>
                     <th>Dato</th>
@@ -71,9 +83,11 @@
             </thead>
 
             <tbody>
+
                 @foreach (var forecast in GetForecasts())
                 {
                     <tr>
+
                         <td class="date-cell">
                             @forecast.Date.ToShortDateString()
                         </td>
@@ -88,27 +102,30 @@
                             @if (forecast.TemperatureC <= 10)
                             {
                                 <span class="temperature cold-temperature">
-                                    @(forecast.TemperatureC) °C
+                                    @forecast.TemperatureC °C
                                 </span>
                             }
                             else
                             {
                                 <span class="temperature warm-temperature">
-                                    @(forecast.TemperatureC) °C
+                                    @forecast.TemperatureC °C
                                 </span>
                             }
                         </td>
 
                         <td>
-                            @(forecast.TemperatureF) °F
+                            @forecast.TemperatureF °F
                         </td>
 
                         <td>
                             @forecast.Summary
                         </td>
+
                     </tr>
                 }
+
             </tbody>
+
         </table>
 
     </div>
@@ -126,11 +143,12 @@
     {
         WeatherForecast[]? apiForecasts =
             await Http.GetFromJsonAsync<WeatherForecast[]>(
-                "http://localhost:5186/Api/vejr/random/20"
+                "Api/vejr/random/20"
             );
 
-        forecasts = apiForecasts?.ToList()
-                    ?? new List<WeatherForecast>();
+        forecasts =
+            apiForecasts?.ToList()
+            ?? new List<WeatherForecast>();
     }
 
     private IEnumerable<WeatherForecast> GetForecasts()
@@ -140,13 +158,15 @@
         if (filter == "Kolde")
         {
             result = result.Where(
-                f => f.TemperatureC <= 10);
+                f => f.TemperatureC <= 10
+            );
         }
 
         if (filter == "Varme")
         {
             result = result.Where(
-                f => f.TemperatureC > 10);
+                f => f.TemperatureC > 10
+            );
         }
 
         return result.Take(numberToShow);

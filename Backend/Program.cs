@@ -33,6 +33,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+string backendUrl =
+    builder.Configuration["BackendUrl"]
+    ?? throw new Exception(
+        "BackendUrl mangler i appsettings.json"
+    );
+
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri(
+        backendUrl.TrimEnd('/') + "/"
+    )
+});
+
 app.UseHttpsRedirection();
 
 app.UseCors("policy");

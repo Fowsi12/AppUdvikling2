@@ -18,113 +18,138 @@
 <div class="product-page">
 
     <div class="product-header">
+
         <div>
-            <span class="product-eyebrow">PRODUKTADMINISTRATION</span>
+            <span class="product-eyebrow">
+                PRODUKTADMINISTRATION
+            </span>
+
             <h1>Tilføj produkt</h1>
-            <p>Opret og administrer produkter i dit lille produktkatalog.</p>
 
-            <button class="btn btn-secondary"
-                    @onclick="GoToProductList">
-                Se produktliste
-            </button>
+            <p>
+                Opret et nyt produkt og gem det på serveren.
+            </p>
         </div>
 
-        <div class="product-header-icon">
-            📦
-        </div>
+        <button class="list-button"
+                @onclick="GoToProductList">
+            Se produktliste
+        </button>
+
     </div>
 
     <div class="product-form-card">
 
-        <EditForm Model="@aProduct" OnValidSubmit="@HandleValidSubmit">
+        <EditForm Model="@aProduct"
+                  OnValidSubmit="@HandleValidSubmit">
 
             <DataAnnotationsValidator />
+
             <ValidationSummary />
 
             <div class="form-group">
-                <label for="Name">Navn</label>
+                <label>Navn</label>
 
-                <InputText id="Name"
-                           @bind-Value="aProduct.Name"
-                           class="form-control" />
-            </div>
+                <InputText class="form-control"
+                           @bind-Value="aProduct.Name" />
 
-            <div class="form-row">
-
-                <div class="form-group">
-                    <label for="Price">Pris</label>
-
-                    <InputNumber id="Price"
-                                 @bind-Value="aProduct.Price"
-                                 class="form-control" />
-                </div>
-
-                <div class="form-group">
-                    <label for="Stock">Stock</label>
-
-                    <InputNumber id="Stock"
-                                 @bind-Value="aProduct.Stock"
-                                 class="form-control" />
-
-                    <ValidationMessage For="@(() => aProduct.Stock)" />
-                </div>
-
-                <div class="form-group">
-                    <label for="Category">Kategori</label>
-
-                    <InputSelect id="Category"
-                                 @bind-Value="aProduct.Category"
-                                 class="form-control">
-
-                        <option value="">-- Vælg kategori --</option>
-                        <option value="computer">Computer</option>
-                        <option value="audio">Audio</option>
-                        <option value="video">Video</option>
-                        <option value="memory">Memory</option>
-                        <option value="other">Other</option>
-
-                    </InputSelect>
-
-                    <ValidationMessage For="@(() => aProduct.Category)" />
-                </div>
-
-                <div class="form-group">
-                    <label for="PublishedDate">Udgivelsesdato</label>
-
-                    <InputDate id="PublishedDate"
-                               @bind-Value="aProduct.PublishedDate"
-                               class="form-control" />
-                </div>
-
+                <ValidationMessage
+                    For="@(() => aProduct.Name)" />
             </div>
 
             <div class="form-group">
-                <label for="Description">Beskrivelse</label>
+                <label>Pris</label>
 
-                <InputTextArea id="Description"
-                               @bind-Value="aProduct.Description"
-                               class="form-control description-box" />
+                <InputNumber class="form-control"
+                             @bind-Value="aProduct.Price" />
+
+                <ValidationMessage
+                    For="@(() => aProduct.Price)" />
             </div>
 
-            <div class="form-group checkbox-group">
+            <div class="form-group">
+                <label>Stock</label>
+
+                <InputNumber class="form-control"
+                             @bind-Value="aProduct.Stock" />
+
+                <ValidationMessage
+                    For="@(() => aProduct.Stock)" />
+            </div>
+
+            <div class="form-group">
+                <label>Kategori</label>
+
+                <InputSelect class="form-control"
+                             @bind-Value="aProduct.Category">
+
+                    <option value="">
+                        Vælg kategori
+                    </option>
+
+                    <option value="computer">
+                        Computer
+                    </option>
+
+                    <option value="audio">
+                        Audio
+                    </option>
+
+                    <option value="video">
+                        Video
+                    </option>
+
+                    <option value="memory">
+                        Memory
+                    </option>
+
+                    <option value="other">
+                        Andet
+                    </option>
+
+                </InputSelect>
+
+                <ValidationMessage
+                    For="@(() => aProduct.Category)" />
+            </div>
+
+            <div class="form-group">
+                <label>Dato</label>
+
+                <InputDate class="form-control"
+                           @bind-Value="aProduct.PublishedDate" />
+            </div>
+
+            <div class="form-group">
+                <label>Beskrivelse</label>
+
+                <InputTextArea class="form-control"
+                               @bind-Value="aProduct.Description" />
+
+                <ValidationMessage
+                    For="@(() => aProduct.Description)" />
+            </div>
+
+            <div class="form-check">
+                <InputCheckbox class="form-check-input"
+                               @bind-Value="aProduct.IsPublished" />
+
                 <label>
-                    <InputCheckbox @bind-Value="aProduct.IsPublished"
-                                   class="form-check-input" />
-                    Is Published
+                    Published
                 </label>
             </div>
 
             <div class="form-actions">
 
                 <button type="submit"
-                        class="submit-button">
-                    + Tilføj produkt
+                        class="save-button">
+                    Gem produkt
                 </button>
 
                 <button type="button"
                         class="reset-button"
                         @onclick="ResetForm">
-                    ↻ Reset
+                    Nulstil
                 </button>
 
             </div>
@@ -133,7 +158,7 @@
 
         @if (!string.IsNullOrEmpty(status))
         {
-            <div class="status-message">
+            <div class="product-status">
                 @status
             </div>
         }
@@ -149,7 +174,8 @@
 
     private User? loggedInUser;
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(
+        bool firstRender)
     {
         if (firstRender)
         {
@@ -162,16 +188,20 @@
             if (string.IsNullOrEmpty(savedUser))
             {
                 Navigation.NavigateTo("/login", true);
+
                 return;
             }
 
             loggedInUser =
                 JsonSerializer.Deserialize<User>(savedUser);
 
-            // Kun admin må oprette produkter
             if (loggedInUser?.Role != "admin")
             {
-                Navigation.NavigateTo("/productlist", true);
+                Navigation.NavigateTo(
+                    "/productlist",
+                    true
+                );
+
                 return;
             }
 
@@ -183,7 +213,7 @@
     {
         HttpResponseMessage response =
             await Http.PostAsJsonAsync(
-                "http://localhost:5186/api/product",
+                "api/product",
                 aProduct
             );
 
@@ -195,7 +225,8 @@
         }
         else
         {
-            status = "Der opstod en fejl ved gemning af produktet.";
+            status =
+                "Der opstod en fejl ved gemning af produktet.";
         }
     }
 

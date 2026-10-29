@@ -1,6 +1,7 @@
 @page "/search"
 
 @using System.Net.Http.Json
+
 @inject HttpClient Http
 
 <h3>SearchPage</h3>
@@ -20,19 +21,21 @@
     Distance 1
 </button>
 
-@if (!string.IsNullOrEmpty(searchDescription) && viewedWords != null)
+@if (!string.IsNullOrEmpty(searchDescription)
+     && viewedWords != null)
 {
     <p>
-        Herunder er @viewedWords.Length ord som @searchDescription
+        Herunder er @viewedWords.Length ord som
+        @searchDescription
     </p>
 }
 
 @if (viewedWords != null)
 {
     <ul>
-        @foreach (var w in viewedWords.Take(visibleCount))
+        @foreach (var word in viewedWords.Take(visibleCount))
         {
-            <li>@w</li>
+            <li>@word</li>
         }
     </ul>
 
@@ -61,7 +64,7 @@ else
     {
         viewedWords =
             await Http.GetFromJsonAsync<string[]>(
-                "http://localhost:5186/word/100"
+                "word/100"
             );
     }
 
@@ -76,13 +79,10 @@ else
 
         string search =
             Uri.EscapeDataString(searchText.Trim());
-  // gør søgeteksten sikker at putte ind i en URL. Det bliver især nyttigt, hvis teksten indeholder mellemrum eller særlige tegn.      
-        
-  
-  
+
         viewedWords =
             await Http.GetFromJsonAsync<string[]>(
-                $"http://localhost:5186/word/startswith/{search}"
+                $"word/startswith/{search}"
             );
 
         searchDescription =
@@ -103,7 +103,7 @@ else
 
         viewedWords =
             await Http.GetFromJsonAsync<string[]>(
-                $"http://localhost:5186/word/contains/{search}"
+                $"word/contains/{search}"
             );
 
         searchDescription =
@@ -124,7 +124,7 @@ else
 
         viewedWords =
             await Http.GetFromJsonAsync<string[]>(
-                $"http://localhost:5186/word/distanceone/{search}"
+                $"word/distanceone/{search}"
             );
 
         searchDescription =

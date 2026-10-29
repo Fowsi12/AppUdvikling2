@@ -34,3 +34,12 @@ C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\obj\Debug\net10.0\Backend.gen
 C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\obj\Debug\net10.0\ref\Backend.dll
 C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Core.dll
 C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Core.pdb
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\DnsClient.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\MongoDB.Bson.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\MongoDB.Driver.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\SharpCompress.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Snappier.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\fowsi\RiderProjects\AppUdvikling2\Backend\bin\Debug\net10.0\ZstdSharp.dll
