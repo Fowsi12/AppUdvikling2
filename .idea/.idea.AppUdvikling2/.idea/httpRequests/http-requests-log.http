@@ -1,0 +1,296 @@
+GET http://localhost:5186/api/product
+
+<> 2026-10-26T132941.200.json
+
+###
+GET http://localhost:5186/api/product
+
+<> 2026-10-26T132938-3.200.json
+
+###
+POST http://localhost:5186/api/product
+Content-Type: application/json
+
+{
+  "name": "Gaming Mus",
+  "price": 499,
+  "description": "Trådløs gaming mus",
+  "publishedDate": "2026-10-26T12:00:00",
+  "isPublished": true,
+  "stock": 10,
+  "category": "computer"
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132938-2.200.json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132938-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132938.200.json
+
+###
+POST http://localhost:5186/api/todo
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": false
+}
+
+###
+GET http://localhost:5186/weatherforecast/
+Accept: application/json
+
+###
+GET http://localhost:5186/api/product
+
+###
+GET http://localhost:5186/api/product
+
+###
+POST http://localhost:5186/api/product
+Content-Type: application/json
+
+{
+  "name": "Gaming Mus",
+  "price": 499,
+  "description": "Trådløs gaming mus",
+  "publishedDate": "2026-10-26T12:00:00",
+  "isPublished": true,
+  "stock": 10,
+  "category": "computer"
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132906-2.200.json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132906-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132906.200.json
+
+###
+POST http://localhost:5186/api/todo
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": false
+}
+
+###
+GET http://localhost:5186/weatherforecast/
+Accept: application/json
+
+###
+GET http://localhost:5186/api/product
+
+###
+POST http://localhost:5186/api/product
+Content-Type: application/json
+
+{
+  "name": "Gaming Mus",
+  "price": 499,
+  "description": "Trådløs gaming mus",
+  "publishedDate": "2026-10-26T12:00:00",
+  "isPublished": true,
+  "stock": 10,
+  "category": "computer"
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132852-2.200.json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132852-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T132852.200.json
+
+###
+POST http://localhost:5186/api/todo
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": false
+}
+
+###
+GET http://localhost:5186/weatherforecast/
+Accept: application/json
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115452.200.json
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115448-2.200.json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115448-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115448.200.json
+
+###
+POST http://localhost:5186/api/todo
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": false
+}
+
+###
+GET http://localhost:5186/weatherforecast/
+Accept: application/json
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115446.200.json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115424-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115424.200.json
+
+###
+POST http://localhost:5186/api/todo
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": false
+}
+
+###
+GET http://localhost:5186/weatherforecast/
+Accept: application/json
+
+###
+DELETE http://localhost:5186/api/todo/1
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115334.200.json
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115331-1.200.json
+
+###
+PUT http://localhost:5186/api/todo/1
+Content-Type: application/json
+
+{
+  "title": "Lav opgave 17.1",
+  "isDone": true
+}
+
+###
+GET http://localhost:5186/api/todo
+
+<> 2026-10-26T115331.200.json
+
+###

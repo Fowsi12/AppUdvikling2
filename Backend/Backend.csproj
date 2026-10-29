@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1"/>
+        <PackageReference Include="MongoDB.Driver" Version="3.13.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.3.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Data\words.txt">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>

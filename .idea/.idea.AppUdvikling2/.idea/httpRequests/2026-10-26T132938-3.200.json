@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Gaming Mus",
+    "price": 499,
+    "description": "Trådløs gaming mus",
+    "publishedDate": "2026-10-26T12:00:00",
+    "isPublished": true,
+    "stock": 10,
+    "category": "computer"
+  }
+]
